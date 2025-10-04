@@ -1,0 +1,88 @@
+<header class="sticky top-0 z-50 bg-black border-b border-gray-800">
+  <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-3">
+        <span class="font-bold text-xl text-white">AI-Solutions</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden lg:flex items-center space-x-1">
+        <a href="/solutions/" class="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors">
+          Solutions
+        </a>
+        <a href="/portfolio/" class="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors">
+          Portfolio
+        </a>
+        <a href="/testimonials/" class="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors">
+          Testimonials
+        </a>
+        <a href="/articles/" class="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors">
+          Articles
+        </a>
+        <a href="/gallery/" class="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors">
+          Gallery
+        </a>
+        <a href="/events/" class="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors">
+          Events
+        </a>
+      </div>
+
+      <!-- CTA Button & Mobile Menu -->
+      <div class="flex items-center gap-4">
+        <a href="/contact/" class="hidden sm:inline-flex items-center gap-2 bg-white text-black px-6 py-2 rounded font-semibold text-sm hover:bg-gray-200 transition-colors">
+          Contact
+        </a>
+        
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-button" class="lg:hidden p-2 text-gray-300 hover:text-white transition-colors">
+          <i class="ri-menu-line text-xl"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div id="mobile-menu" class="lg:hidden hidden border-t border-gray-800 bg-black">
+      <div class="px-2 pt-2 pb-3 space-y-1">
+        <a href="/solutions/" class="flex items-center gap-3 px-3 py-3 text-base font-medium text-gray-300 hover:text-white transition-colors">
+          Solutions
+        </a>
+        <a href="/portfolio/" class="flex items-center gap-3 px-3 py-3 text-base font-medium text-gray-300 hover:text-white transition-colors">
+          Portfolio
+        </a>
+        <a href="/testimonials/" class="flex items-center gap-3 px-3 py-3 text-base font-medium text-gray-300 hover:text-white transition-colors">
+          Testimonials
+        </a>
+        <a href="/articles/" class="flex items-center gap-3 px-3 py-3 text-base font-medium text-gray-300 hover:text-white transition-colors">
+          Articles
+        </a>
+        <a href="/gallery/" class="flex items-center gap-3 px-3 py-3 text-base font-medium text-gray-300 hover:text-white transition-colors">
+          Gallery
+        </a>
+        <a href="/events/" class="flex items-center gap-3 px-3 py-3 text-base font-medium text-gray-300 hover:text-white transition-colors">
+          Events
+        </a>
+        <a href="/contact/" class="flex items-center gap-3 px-3 py-3 text-base font-medium text-gray-300 hover:text-white transition-colors sm:hidden">
+          Contact
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  
+  mobileMenuButton.addEventListener('click', function() {
+    mobileMenu.classList.toggle('hidden');
+    const icon = mobileMenuButton.querySelector('i');
+    if (mobileMenu.classList.contains('hidden')) {
+      icon.className = 'ri-menu-line text-xl';
+    } else {
+      icon.className = 'ri-close-line text-xl';
+    }
+  });
+});
+</script> 

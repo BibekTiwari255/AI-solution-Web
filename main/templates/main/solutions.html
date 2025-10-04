@@ -1,0 +1,185 @@
+{% extends 'main/base.html' %}
+{% block content %}
+{% include 'main/partials/hero.html' with title='AI-Powered Solutions' subtitle='Transform your digital employee experience with our cutting-edge AI solutions designed for modern enterprises.' icon_class='ri-magic-line' badge_text='Enterprise Ready' cta_text='Get Started' cta_url='/contact/' secondary_cta_text='View Portfolio' secondary_cta_url='/portfolio/' %}
+
+
+<!-- Solution Categories -->
+<section class="mt-12">
+  <div class="text-center mb-12">
+    <h2 class="text-3xl font-bold text-white mb-4">Our Solution Categories</h2>
+    <p class="text-gray-300 max-w-2xl mx-auto">Choose from our comprehensive suite of AI solutions tailored to your specific business needs.</p>
+  </div>
+  
+  <div class="grid md:grid-cols-3 gap-8 mb-16">
+    <div class="text-center p-6 bg-gray-800 rounded border hover:bg-gray-700 transition-colors">
+      <div class="w-16 h-16 bg-gray-700 rounded flex items-center justify-center mx-auto mb-4">
+        <i class="ri-robot-2-line text-white text-2xl"></i>
+      </div>
+      <h3 class="text-xl font-semibold text-white mb-2">AI Virtual Assistants</h3>
+      <p class="text-gray-300">Intelligent assistants that handle complex queries and automate routine tasks.</p>
+    </div>
+    
+    <div class="text-center p-6 bg-gray-800 rounded border hover:bg-gray-700 transition-colors">
+      <div class="w-16 h-16 bg-gray-700 rounded flex items-center justify-center mx-auto mb-4">
+        <i class="ri-flashlight-line text-white text-2xl"></i>
+      </div>
+      <h3 class="text-xl font-semibold text-white mb-2">Rapid Prototyping</h3>
+      <p class="text-gray-300">Fast-track your AI ideas from concept to working prototype in days.</p>
+    </div>
+    
+    <div class="text-center p-6 bg-gray-800 rounded border hover:bg-gray-700 transition-colors">
+      <div class="w-16 h-16 bg-gray-700 rounded flex items-center justify-center mx-auto mb-4">
+        <i class="ri-line-chart-line text-white text-2xl"></i>
+      </div>
+      <h3 class="text-xl font-semibold text-white mb-2">Analytics & Insights</h3>
+      <p class="text-gray-300">Unlock hidden patterns and optimize workflows with AI-driven analytics.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Solutions -->
+<section class="mb-16">
+  <h2 class="text-3xl font-bold text-white mb-8 text-center">Featured Solutions</h2>
+  
+  <div class="grid lg:grid-cols-2 gap-8 mb-12">
+    {% for solution in featured_solutions %}
+    <div class="bg-gray-800 rounded p-8 border border-gray-700">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-12 h-12 bg-gray-700 rounded flex items-center justify-center">
+          {% if solution.image %}
+            <img src="{{ solution.image.url }}" alt="{{ solution.title }}" class="w-8 h-8 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <i class="ri-robot-2-line text-white text-xl" style="display:none;"></i>
+          {% else %}
+            <i class="ri-robot-2-line text-white text-xl"></i>
+          {% endif %}
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold text-white">{{ solution.title }}</h3>
+          <p class="text-gray-300">{{ solution.get_category_display }}</p>
+        </div>
+      </div>
+      
+      <p class="text-gray-300 mb-6">{{ solution.description }}</p>
+      
+      <div class="grid grid-cols-2 gap-4 mb-6">
+        {% for key, value in solution.metrics.items %}
+        <div class="bg-gray-700 rounded p-4 text-center">
+          <div class="text-2xl font-bold text-white mb-1">{{ value }}</div>
+          <div class="text-sm text-gray-300">{{ key|title }}</div>
+        </div>
+        {% endfor %}
+      </div>
+      
+      <div class="space-y-3 mb-6">
+        {% for feature in solution.features %}
+        <div class="flex items-center gap-3">
+          <i class="ri-check-line text-white"></i>
+          <span class="text-gray-300">{{ feature }}</span>
+        </div>
+        {% endfor %}
+      </div>
+      
+      <div class="flex gap-3">
+        <a href="/contact/" class="flex-1 bg-white text-black px-6 py-3 rounded font-semibold text-center hover:bg-gray-200 transition-colors">
+          Get Started
+        </a>
+        <a href="#" class="px-6 py-3 border border-gray-600 text-gray-300 rounded font-semibold hover:bg-gray-700 transition-colors">
+          Learn More
+        </a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- All Solutions Grid -->
+<section class="mb-16">
+  <h2 class="text-3xl font-bold text-white mb-8 text-center">Complete Solution Suite</h2>
+  
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    {% for solution in solutions %}
+    <div class="bg-gray-800 rounded border border-gray-700 hover:bg-gray-700 transition-colors">
+      <div class="aspect-video bg-gray-700 rounded-t flex items-center justify-center">
+        {% if solution.image %}
+          <img src="{{ solution.image.url }}" alt="{{ solution.title }}" class="w-16 h-16 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <i class="ri-robot-2-line text-4xl text-white" style="display:none;"></i>
+        {% else %}
+          <i class="ri-robot-2-line text-4xl text-white"></i>
+        {% endif %}
+      </div>
+      <div class="p-6">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="px-2 py-1 bg-gray-700 text-white text-xs font-medium rounded">{{ solution.get_category_display }}</span>
+          <span class="text-gray-400 text-sm">{% if solution.pricing %}£{{ solution.pricing|floatformat:0 }}/mo{% else %}Custom{% endif %}</span>
+        </div>
+        <h3 class="text-lg font-semibold text-white mb-2">
+          {{ solution.title }}
+        </h3>
+        <p class="text-gray-300 text-sm mb-4">{{ solution.description|truncatewords:20 }}</p>
+        <div class="space-y-2 mb-4">
+          {% for feature in solution.features|slice:":3" %}
+          <div class="flex items-center gap-2 text-sm text-gray-400">
+            <i class="ri-check-line text-white"></i>
+            <span>{{ feature }}</span>
+          </div>
+          {% endfor %}
+        </div>
+        <a href="/contact/" class="text-white hover:text-gray-300 font-medium text-sm inline-flex items-center gap-1">
+          Get Started
+          <i class="ri-arrow-right-line"></i>
+        </a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- Pricing Section -->
+<section class="mb-16 bg-gray-800 rounded p-8">
+  <h2 class="text-3xl font-bold text-white mb-8 text-center">Flexible Pricing</h2>
+  
+  <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+    {% for plan in pricing_plans %}
+    <div class="bg-gray-900 rounded p-6 {% if plan.is_popular %}border-2 border-white relative{% else %}border border-gray-700{% endif %}">
+      {% if plan.is_popular %}
+      <div class="absolute -top-3 left-1/2 -translate-x-1/2">
+        <span class="bg-white text-black px-4 py-1 rounded text-sm font-medium">Most Popular</span>
+      </div>
+      {% endif %}
+      <div class="text-center mb-6">
+        <h3 class="text-xl font-semibold text-white mb-2">{{ plan.name }}</h3>
+        <div class="text-3xl font-bold text-white mb-2">{{ plan.price }}</div>
+        <div class="text-gray-400">{{ plan.period }}</div>
+      </div>
+      <ul class="space-y-3 mb-6">
+        {% for feature in plan.features %}
+        <li class="flex items-center gap-3">
+          <i class="ri-check-line text-white"></i>
+          <span class="text-gray-300">{{ feature }}</span>
+        </li>
+        {% endfor %}
+      </ul>
+      <a href="/contact/" class="w-full {% if plan.is_popular %}bg-white text-black hover:bg-gray-200{% else %}bg-gray-700 hover:bg-gray-600{% endif %} px-6 py-3 rounded font-semibold text-center transition-colors">
+        {% if plan.name == 'Enterprise' %}Contact Sales{% else %}Get Started{% endif %}
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="bg-gray-800 rounded p-8 text-white">
+  <div class="max-w-3xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-4">Ready to Transform Your Business?</h2>
+    <p class="text-gray-300 mb-8">Join hundreds of companies already using our AI solutions to improve efficiency and drive growth.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="/contact/" class="inline-flex items-center gap-2 bg-white text-black px-8 py-4 rounded font-semibold text-lg hover:bg-gray-200 transition-colors">
+        Start Your AI Journey
+      </a>
+      <a href="/portfolio/" class="inline-flex items-center gap-2 border border-gray-600 text-white px-8 py-4 rounded font-semibold text-lg hover:bg-gray-700 transition-colors">
+        View Success Stories
+      </a>
+    </div>
+  </div>
+</section>
+{% endblock %} 

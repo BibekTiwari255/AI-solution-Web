@@ -1,0 +1,234 @@
+{% extends 'main/base.html' %}
+{% block content %}
+{% include 'main/partials/hero.html' with title='Get in Touch' subtitle='Ready to transform your digital employee experience? Let\'s discuss your AI-powered solution.' icon_class='ri-customer-service-2-line' badge_text='Free Consultation' cta_text='Start Your Project' cta_url='#contact-form' %}
+
+<!-- Contact Methods -->
+<section class="mt-12">
+  <div class="grid md:grid-cols-3 gap-8 mb-12">
+    <div class="text-center p-6 bg-white rounded-xl border hover:shadow-lg transition-shadow">
+      <div class="w-16 h-16 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+        <i class="ri-phone-line text-white text-2xl"></i>
+      </div>
+      <h3 class="text-lg font-semibold mb-2">Call Us</h3>
+      <p class="text-slate-600 mb-2">Speak directly with our team</p>
+      <a href="tel:+441911234567" class="text-indigo-600 font-medium hover:underline">+44 191 123 4567</a>
+    </div>
+    
+    <div class="text-center p-6 bg-white rounded-xl border hover:shadow-lg transition-shadow">
+      <div class="w-16 h-16 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+        <i class="ri-mail-line text-white text-2xl"></i>
+      </div>
+      <h3 class="text-lg font-semibold mb-2">Email Us</h3>
+      <p class="text-slate-600 mb-2">Send us your requirements</p>
+      <a href="mailto:hello@ai-solutions.com" class="text-indigo-600 font-medium hover:underline">hello@ai-solutions.com</a>
+    </div>
+    
+    <div class="text-center p-6 bg-white rounded-xl border hover:shadow-lg transition-shadow">
+      <div class="w-16 h-16 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+        <i class="ri-map-pin-line text-white text-2xl"></i>
+      </div>
+      <h3 class="text-lg font-semibold mb-2">Visit Us</h3>
+      <p class="text-slate-600 mb-2">Our office in Sunderland</p>
+      <p class="text-slate-700">Sunderland, UK</p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Form -->
+<section id="contact-form" class="bg-gradient-to-br from-slate-50 to-indigo-50 rounded-2xl p-8">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-8">
+      <h2 class="text-3xl font-bold text-slate-900 mb-4">Tell Us About Your Project</h2>
+      <p class="text-slate-600 max-w-2xl mx-auto">Share your requirements and we'll get back to you within 24 hours with a tailored proposal.</p>
+    </div>
+    
+    <form method="post" class="bg-white rounded-xl p-8 shadow-lg">
+      {% csrf_token %}
+      {{ form.non_field_errors }}
+      
+      <style>
+        .form-field {
+          background-color: #f8fafc;
+          border: 2px solid #e2e8f0;
+          border-radius: 0.5rem;
+          padding: 0.75rem 1rem;
+          font-size: 1rem;
+          color: #1e293b;
+          transition: all 0.2s ease-in-out;
+          width: 100%;
+          min-width: 300px;
+        }
+        .form-field:focus {
+          background-color: #ffffff;
+          border-color: #6366f1;
+          box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+          outline: none;
+        }
+        .form-field::placeholder {
+          color: #64748b;
+        }
+        .form-textarea {
+          background-color: #f8fafc;
+          border: 2px solid #e2e8f0;
+          border-radius: 0.5rem;
+          padding: 0.75rem 1rem;
+          font-size: 1rem;
+          color: #1e293b;
+          transition: all 0.2s ease-in-out;
+          resize: vertical;
+          min-height: 120px;
+          width: 100%;
+          min-width: 300px;
+        }
+        .form-textarea:focus {
+          background-color: #ffffff;
+          border-color: #6366f1;
+          box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+          outline: none;
+        }
+        .form-textarea::placeholder {
+          color: #64748b;
+        }
+        .form-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 1.5rem;
+        }
+        @media (max-width: 640px) {
+          .form-grid {
+            grid-template-columns: 1fr;
+          }
+        }
+      </style>
+      
+      <!-- Personal Information -->
+      <div class="mb-8">
+        <h3 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+          <i class="ri-user-line text-indigo-600"></i>
+          Personal Information
+        </h3>
+        <div class="form-grid">
+          <div>
+            <label class="block text-sm font-medium text-slate-700 mb-2">Full Name *</label>
+            {{ form.full_name }}
+            {{ form.full_name.errors }}
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-slate-700 mb-2">Email Address *</label>
+            {{ form.email }}
+            {{ form.email.errors }}
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-slate-700 mb-2">Phone Number *</label>
+            {{ form.phone }}
+            {{ form.phone.errors }}
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-slate-700 mb-2">Job Title</label>
+            {{ form.job_title }}
+          </div>
+        </div>
+      </div>
+
+      <!-- Company Information -->
+      <div class="mb-8">
+        <h3 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+          <i class="ri-building-line text-indigo-600"></i>
+          Company Information
+        </h3>
+        <div class="form-grid">
+          <div>
+            <label class="block text-sm font-medium text-slate-700 mb-2">Company Name</label>
+            {{ form.company_name }}
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-slate-700 mb-2">Country</label>
+            {{ form.country }}
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Details -->
+      <div class="mb-8">
+        <h3 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+          <i class="ri-lightbulb-line text-indigo-600"></i>
+          Project Details
+        </h3>
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-2">Tell us about your project *</label>
+          {{ form.job_details }}
+          {{ form.job_details.errors }}
+          <p class="text-sm text-slate-500 mt-2">Please describe your requirements, goals, and any specific challenges you're facing.</p>
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="text-center">
+        <button type="submit" class="inline-flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200">
+          <i class="ri-send-plane-line"></i>
+          Send Message
+        </button>
+        <p class="text-sm text-slate-500 mt-4">We'll respond within 24 hours</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="mt-16">
+  <div class="text-center mb-12">
+    <h2 class="text-3xl font-bold text-slate-900 mb-4">Why Choose AI-Solutions?</h2>
+    <p class="text-slate-600 max-w-2xl mx-auto">We're not just another AI company. We're your partners in digital transformation.</p>
+  </div>
+  
+  <div class="grid md:grid-cols-3 gap-8">
+    <div class="text-center p-6">
+      <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
+        <i class="ri-time-line text-indigo-600 text-2xl"></i>
+      </div>
+      <h3 class="text-lg font-semibold mb-2">Fast Response</h3>
+      <p class="text-slate-600">Get a response within 24 hours and start your project in days, not weeks.</p>
+    </div>
+    
+    <div class="text-center p-6">
+      <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
+        <i class="ri-shield-check-line text-indigo-600 text-2xl"></i>
+      </div>
+      <h3 class="text-lg font-semibold mb-2">Proven Expertise</h3>
+      <p class="text-slate-600">Years of experience in AI and digital employee experience solutions.</p>
+    </div>
+    
+    <div class="text-center p-6">
+      <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
+        <i class="ri-customer-service-2-line text-indigo-600 text-2xl"></i>
+      </div>
+      <h3 class="text-lg font-semibold mb-2">Dedicated Support</h3>
+      <p class="text-slate-600">Ongoing support and maintenance to ensure your success.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="mt-16 bg-slate-50 rounded-2xl p-8">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-3xl font-bold text-center text-slate-900 mb-8">Frequently Asked Questions</h2>
+    
+    <div class="space-y-4">
+      <div class="bg-white rounded-lg p-6 border">
+        <h3 class="font-semibold text-slate-900 mb-2">How quickly can you start my project?</h3>
+        <p class="text-slate-600">We can typically begin your project within 1-2 weeks of contract signing, depending on project complexity.</p>
+      </div>
+      
+      <div class="bg-white rounded-lg p-6 border">
+        <h3 class="font-semibold text-slate-900 mb-2">Do you provide ongoing support?</h3>
+        <p class="text-slate-600">Yes, we offer comprehensive support and maintenance packages to ensure your AI solutions continue to perform optimally.</p>
+      </div>
+      
+      <div class="bg-white rounded-lg p-6 border">
+        <h3 class="font-semibold text-slate-900 mb-2">What industries do you work with?</h3>
+        <p class="text-slate-600">We work across various industries including finance, healthcare, retail, manufacturing, and technology sectors.</p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %} 

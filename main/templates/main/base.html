@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+    <title>AI-Solutions</title>
+  </head>
+  <body class="bg-black text-white overflow-x-hidden">
+    {% include 'main/partials/nav.html' %}
+
+    <main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+      {% if messages %}
+        <div class="space-y-2 mb-6">
+          {% for message in messages %}
+            <div class="p-3 rounded border bg-gray-800 border-gray-700 text-white">{{ message }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+      {% block content %}{% endblock %}
+    </main>
+
+    {% include 'main/partials/footer.html' %}
+  </body>
+</html>

@@ -1,0 +1,271 @@
+{% extends 'main/base.html' %}
+{% block content %}
+{% include 'main/partials/hero.html' with title='AI Insights & Articles' subtitle='Stay ahead with the latest trends in AI, digital employee experience, and workplace innovation.' icon_class='ri-newspaper-line' badge_text='Thought Leadership' cta_text='Subscribe to Newsletter' cta_url='#newsletter' %}
+
+<!-- Featured Article -->
+<section class="mt-12">
+  <div class="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl p-8 text-white">
+    <div class="flex items-center gap-2 mb-4">
+      <span class="px-3 py-1 bg-white/20 rounded-full text-sm font-medium">Featured</span>
+      <span class="text-indigo-200 text-sm">5 min read</span>
+    </div>
+    <h2 class="text-3xl font-bold mb-4">The Future of Digital Employee Experience: How AI is Transforming the Workplace</h2>
+    <p class="text-indigo-100 text-lg mb-6 max-w-3xl">Discover how artificial intelligence is revolutionizing the way employees interact with technology, boosting productivity, and creating more intuitive digital experiences across organizations.</p>
+    <div class="flex items-center gap-4">
+      <div class="flex items-center gap-2">
+        <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+          <i class="ri-user-line text-sm"></i>
+        </div>
+        <span class="text-sm">AI-Solutions Team</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="ri-calendar-line text-sm"></i>
+        <span class="text-sm">December 15, 2024</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="ri-eye-line text-sm"></i>
+        <span class="text-sm">2.3k views</span>
+      </div>
+    </div>
+    <a href="#" class="inline-flex items-center gap-2 mt-6 bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-indigo-50 transition-colors">
+      Read Full Article
+      <i class="ri-arrow-right-line"></i>
+    </a>
+  </div>
+</section>
+
+<!-- Articles Grid -->
+<section class="mt-12">
+  <div class="flex items-center justify-between mb-8">
+    <h2 class="text-2xl font-bold text-slate-900">Latest Articles</h2>
+    <div class="flex gap-2">
+      <button class="px-4 py-2 text-sm font-medium text-slate-700 bg-slate-100 rounded-lg hover:bg-slate-200 transition-colors">
+        <i class="ri-filter-line mr-1"></i>
+        Filter
+      </button>
+      <button class="px-4 py-2 text-sm font-medium text-slate-700 bg-slate-100 rounded-lg hover:bg-slate-200 transition-colors">
+        <i class="ri-sort-desc mr-1"></i>
+        Sort
+      </button>
+    </div>
+  </div>
+
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- Article 1 -->
+    <article class="bg-white rounded-xl border hover:shadow-lg transition-shadow group">
+      <div class="aspect-video bg-gradient-to-br from-indigo-100 to-purple-100 rounded-t-xl flex items-center justify-center">
+        <i class="ri-robot-2-line text-4xl text-indigo-600"></i>
+      </div>
+      <div class="p-6">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="px-2 py-1 bg-indigo-100 text-indigo-700 text-xs font-medium rounded">AI</span>
+          <span class="text-slate-500 text-sm">4 min read</span>
+        </div>
+        <h3 class="text-lg font-semibold text-slate-900 mb-2 group-hover:text-indigo-600 transition-colors">
+          Building AI-Powered Virtual Assistants for Enterprise
+        </h3>
+        <p class="text-slate-600 text-sm mb-4">Learn how to design and implement intelligent virtual assistants that can handle complex employee queries and streamline internal processes.</p>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2 text-sm text-slate-500">
+            <i class="ri-calendar-line"></i>
+            <span>Dec 12, 2024</span>
+          </div>
+          <a href="#" class="text-indigo-600 hover:text-indigo-700 font-medium text-sm inline-flex items-center gap-1">
+            Read more
+            <i class="ri-arrow-right-line"></i>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Article 2 -->
+    <article class="bg-white rounded-xl border hover:shadow-lg transition-shadow group">
+      <div class="aspect-video bg-gradient-to-br from-green-100 to-emerald-100 rounded-t-xl flex items-center justify-center">
+        <i class="ri-flashlight-line text-4xl text-green-600"></i>
+      </div>
+      <div class="p-6">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="px-2 py-1 bg-green-100 text-green-700 text-xs font-medium rounded">Prototyping</span>
+          <span class="text-slate-500 text-sm">6 min read</span>
+        </div>
+        <h3 class="text-lg font-semibold text-slate-900 mb-2 group-hover:text-indigo-600 transition-colors">
+          Rapid Prototyping: From Idea to Implementation in 48 Hours
+        </h3>
+        <p class="text-slate-600 text-sm mb-4">Discover our proven methodology for creating functional AI prototypes that validate ideas quickly and cost-effectively.</p>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2 text-sm text-slate-500">
+            <i class="ri-calendar-line"></i>
+            <span>Dec 10, 2024</span>
+          </div>
+          <a href="#" class="text-indigo-600 hover:text-indigo-700 font-medium text-sm inline-flex items-center gap-1">
+            Read more
+            <i class="ri-arrow-right-line"></i>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Article 3 -->
+    <article class="bg-white rounded-xl border hover:shadow-lg transition-shadow group">
+      <div class="aspect-video bg-gradient-to-br from-purple-100 to-pink-100 rounded-t-xl flex items-center justify-center">
+        <i class="ri-line-chart-line text-4xl text-purple-600"></i>
+      </div>
+      <div class="p-6">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="px-2 py-1 bg-purple-100 text-purple-700 text-xs font-medium rounded">Analytics</span>
+          <span class="text-slate-500 text-sm">5 min read</span>
+        </div>
+        <h3 class="text-lg font-semibold text-slate-900 mb-2 group-hover:text-indigo-600 transition-colors">
+          Measuring Digital Employee Experience: Key Metrics That Matter
+        </h3>
+        <p class="text-slate-600 text-sm mb-4">Understand which metrics to track and how to measure the success of your digital employee experience initiatives.</p>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2 text-sm text-slate-500">
+            <i class="ri-calendar-line"></i>
+            <span>Dec 8, 2024</span>
+          </div>
+          <a href="#" class="text-indigo-600 hover:text-indigo-700 font-medium text-sm inline-flex items-center gap-1">
+            Read more
+            <i class="ri-arrow-right-line"></i>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Article 4 -->
+    <article class="bg-white rounded-xl border hover:shadow-lg transition-shadow group">
+      <div class="aspect-video bg-gradient-to-br from-blue-100 to-cyan-100 rounded-t-xl flex items-center justify-center">
+        <i class="ri-shield-keyhole-line text-4xl text-blue-600"></i>
+      </div>
+      <div class="p-6">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="px-2 py-1 bg-blue-100 text-blue-700 text-xs font-medium rounded">Security</span>
+          <span class="text-slate-500 text-sm">7 min read</span>
+        </div>
+        <h3 class="text-lg font-semibold text-slate-900 mb-2 group-hover:text-indigo-600 transition-colors">
+          Enterprise AI Security: Best Practices for Data Protection
+        </h3>
+        <p class="text-slate-600 text-sm mb-4">Essential security considerations when implementing AI solutions in enterprise environments, including data privacy and compliance.</p>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2 text-sm text-slate-500">
+            <i class="ri-calendar-line"></i>
+            <span>Dec 5, 2024</span>
+          </div>
+          <a href="#" class="text-indigo-600 hover:text-indigo-700 font-medium text-sm inline-flex items-center gap-1">
+            Read more
+            <i class="ri-arrow-right-line"></i>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Article 5 -->
+    <article class="bg-white rounded-xl border hover:shadow-lg transition-shadow group">
+      <div class="aspect-video bg-gradient-to-br from-orange-100 to-red-100 rounded-t-xl flex items-center justify-center">
+        <i class="ri-puzzle-2-line text-4xl text-orange-600"></i>
+      </div>
+      <div class="p-6">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="px-2 py-1 bg-orange-100 text-orange-700 text-xs font-medium rounded">Integration</span>
+          <span class="text-slate-500 text-sm">4 min read</span>
+        </div>
+        <h3 class="text-lg font-semibold text-slate-900 mb-2 group-hover:text-indigo-600 transition-colors">
+          Seamless AI Integration: Connecting Your Existing Tools
+        </h3>
+        <p class="text-slate-600 text-sm mb-4">Learn how to integrate AI solutions with your current tech stack without disrupting existing workflows.</p>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2 text-sm text-slate-500">
+            <i class="ri-calendar-line"></i>
+            <span>Dec 3, 2024</span>
+          </div>
+          <a href="#" class="text-indigo-600 hover:text-indigo-700 font-medium text-sm inline-flex items-center gap-1">
+            Read more
+            <i class="ri-arrow-right-line"></i>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Article 6 -->
+    <article class="bg-white rounded-xl border hover:shadow-lg transition-shadow group">
+      <div class="aspect-video bg-gradient-to-br from-teal-100 to-cyan-100 rounded-t-xl flex items-center justify-center">
+        <i class="ri-global-line text-4xl text-teal-600"></i>
+      </div>
+      <div class="p-6">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="px-2 py-1 bg-teal-100 text-teal-700 text-xs font-medium rounded">Global</span>
+          <span class="text-slate-500 text-sm">6 min read</span>
+        </div>
+        <h3 class="text-lg font-semibold text-slate-900 mb-2 group-hover:text-indigo-600 transition-colors">
+          Scaling AI Solutions Across Global Teams
+        </h3>
+        <p class="text-slate-600 text-sm mb-4">Strategies for deploying AI-powered tools across different time zones, cultures, and regulatory environments.</p>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2 text-sm text-slate-500">
+            <i class="ri-calendar-line"></i>
+            <span>Dec 1, 2024</span>
+          </div>
+          <a href="#" class="text-indigo-600 hover:text-indigo-700 font-medium text-sm inline-flex items-center gap-1">
+            Read more
+            <i class="ri-arrow-right-line"></i>
+          </a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- Newsletter Signup -->
+<section id="newsletter" class="mt-16 bg-gradient-to-r from-slate-900 to-slate-800 rounded-2xl p-8 text-white">
+  <div class="max-w-3xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-4">Stay Updated with AI Insights</h2>
+    <p class="text-slate-300 mb-8">Get the latest articles, case studies, and industry insights delivered to your inbox weekly.</p>
+    <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+      <input type="email" placeholder="Enter your email address" 
+             class="flex-1 px-4 py-3 rounded-lg bg-white text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+      <button type="submit" class="px-6 py-3 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 transition-colors">
+        Subscribe
+      </button>
+    </form>
+    <p class="text-slate-400 text-sm mt-4">No spam, unsubscribe at any time.</p>
+  </div>
+</section>
+
+<!-- Categories -->
+<section class="mt-16">
+  <h2 class="text-2xl font-bold text-slate-900 mb-8">Browse by Category</h2>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <a href="#" class="p-4 bg-white rounded-xl border hover:shadow-lg transition-shadow text-center group">
+      <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:bg-indigo-200 transition-colors">
+        <i class="ri-robot-2-line text-indigo-600 text-xl"></i>
+      </div>
+      <h3 class="font-semibold text-slate-900 mb-1">AI & Machine Learning</h3>
+      <p class="text-sm text-slate-500">12 articles</p>
+    </a>
+    
+    <a href="#" class="p-4 bg-white rounded-xl border hover:shadow-lg transition-shadow text-center group">
+      <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:bg-green-200 transition-colors">
+        <i class="ri-flashlight-line text-green-600 text-xl"></i>
+      </div>
+      <h3 class="font-semibold text-slate-900 mb-1">Rapid Prototyping</h3>
+      <p class="text-sm text-slate-500">8 articles</p>
+    </a>
+    
+    <a href="#" class="p-4 bg-white rounded-xl border hover:shadow-lg transition-shadow text-center group">
+      <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:bg-purple-200 transition-colors">
+        <i class="ri-line-chart-line text-purple-600 text-xl"></i>
+      </div>
+      <h3 class="font-semibold text-slate-900 mb-1">Analytics & Insights</h3>
+      <p class="text-sm text-slate-500">6 articles</p>
+    </a>
+    
+    <a href="#" class="p-4 bg-white rounded-xl border hover:shadow-lg transition-shadow text-center group">
+      <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:bg-blue-200 transition-colors">
+        <i class="ri-shield-keyhole-line text-blue-600 text-xl"></i>
+      </div>
+      <h3 class="font-semibold text-slate-900 mb-1">Security & Compliance</h3>
+      <p class="text-sm text-slate-500">4 articles</p>
+    </a>
+  </div>
+</section>
+{% endblock %} 

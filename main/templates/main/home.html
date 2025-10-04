@@ -1,0 +1,269 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+  
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <!-- Animated Background -->
+    <div class="absolute inset-0 z-0">
+      <div class="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/30 rounded-full blur-3xl animate-pulse-glow"></div>
+      <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/30 rounded-full blur-3xl animate-pulse-glow" style="animation-delay: 1.5s;"></div>
+      <div class="absolute top-1/2 left-1/2 w-96 h-96 bg-pink-500/20 rounded-full blur-3xl animate-pulse-glow" style="animation-delay: 3s;"></div>
+    </div>
+    
+    <!-- Grid Pattern -->
+    <div class="absolute inset-0 z-0 opacity-20">
+      <svg width="100%" height="100%">
+        <defs>
+          <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(139, 92, 246, 0.3)" stroke-width="1"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#grid)" />
+      </svg>
+    </div>
+
+    <div class="container mx-auto px-6 z-10 relative">
+      <div class="text-center max-w-5xl mx-auto">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-effect mb-6 animate-slide-up">
+          <span class="relative flex h-3 w-3">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+          </span>
+          <span class="text-sm font-medium">AI-Powered Enterprise Solutions</span>
+        </div>
+
+        <!-- Main Heading -->
+        <h1 class="text-6xl md:text-8xl font-black mb-6 animate-slide-up" style="animation-delay: 0.2s;">
+          <span class="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent gradient-animate">
+            Transform Work
+          </span>
+          <br/>
+          <span class="text-white">With Intelligence</span>
+        </h1>
+
+        <p class="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto animate-slide-up" style="animation-delay: 0.4s;">
+          Deploy AI assistants that understand your business, automate complexity, and deliver insights that drive real impact.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-slide-up" style="animation-delay: 0.6s;">
+          <button class="group relative px-8 py-4 bg-gradient-to-r from-violet-600 to-fuchsia-600 rounded-full font-semibold text-lg overflow-hidden transition-all hover:scale-105 hover:shadow-2xl hover:shadow-violet-500/50">
+            <span class="relative z-10">Start Building</span>
+            <div class="absolute inset-0 bg-gradient-to-r from-fuchsia-600 to-violet-600 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          </button>
+          <button class="px-8 py-4 rounded-full font-semibold text-lg border-2 border-white/20 hover:border-white/40 hover:bg-white/5 transition-all">
+            Watch Demo
+          </button>
+        </div>
+
+        <!-- Trust Indicators -->
+        <div class="flex flex-wrap items-center justify-center gap-8 text-sm text-slate-400 animate-slide-up" style="animation-delay: 0.8s;">
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <span>SOC2 Compliant</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <span>99.9% Uptime</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-purple-500" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <span>Enterprise-Grade Security</span>
+          </div>
+        </div>
+
+        <!-- Floating Product Preview -->
+        <div class="mt-16 animate-float">
+          <div class="relative mx-auto max-w-4xl">
+            <div class="absolute -inset-4 bg-gradient-to-r from-violet-600 to-fuchsia-600 rounded-3xl blur-2xl opacity-30"></div>
+            <div class="relative bg-slate-900 rounded-2xl shadow-2xl border border-slate-800 overflow-hidden">
+              <!-- Window Controls -->
+              <div class="flex items-center gap-2 px-4 py-3 bg-slate-800 border-b border-slate-700">
+                <div class="flex gap-2">
+                  <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                  <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                  <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                </div>
+                <div class="flex-1 text-center text-sm text-slate-400">AI Assistant Dashboard</div>
+              </div>
+              <!-- Content -->
+              <div class="p-6 space-y-4">
+                <div class="flex items-start gap-3">
+                  <div class="w-8 h-8 rounded-full bg-gradient-to-br from-violet-500 to-fuchsia-500 flex items-center justify-center flex-shrink-0">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
+                      <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
+                    </svg>
+                  </div>
+                  <div class="flex-1 bg-slate-800 rounded-xl p-4 border border-slate-700">
+                    <div class="text-xs text-slate-400 mb-2">Insight Detected</div>
+                    <div class="text-sm text-slate-200">Analyzed 1,247 support tickets and identified 3 recurring patterns affecting employee onboarding efficiency.</div>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center flex-shrink-0">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
+                    </svg>
+                  </div>
+                  <div class="flex-1 bg-slate-800 rounded-xl p-4 border border-slate-700">
+                    <div class="text-xs text-slate-400 mb-2">Automation Ready</div>
+                    <div class="text-sm text-slate-200">Generated workflow automation for after-hours access approvals. Estimated time savings: 15 hours/week.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-24 bg-slate-900/50 relative">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">
+          <span class="bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
+            Intelligent Solutions
+          </span>
+        </h2>
+        <p class="text-xl text-slate-400 max-w-2xl mx-auto">
+          Powerful capabilities that adapt to your unique workflows
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Feature Card 1 -->
+        <div class="group card-hover bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 border border-slate-700">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-500 to-fuchsia-500 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z"/>
+              <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2">AI Virtual Assistant</h3>
+          <p class="text-slate-400">Conversational AI that understands context, learns from interactions, and provides instant, accurate responses 24/7.</p>
+        </div>
+
+        <!-- Feature Card 2 -->
+        <div class="group card-hover bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 border border-slate-700">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Rapid Prototyping</h3>
+          <p class="text-slate-400">Transform ideas into working prototypes in days, not months. Validate concepts quickly and iterate with confidence.</p>
+        </div>
+
+        <!-- Feature Card 3 -->
+        <div class="group card-hover bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 border border-slate-700">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Predictive Analytics</h3>
+          <p class="text-slate-400">Uncover patterns, predict issues before they occur, and get actionable insights from your operational data.</p>
+        </div>
+
+        <!-- Feature Card 4 -->
+        <div class="group card-hover bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 border border-slate-700">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500 to-pink-500 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Enterprise Security</h3>
+          <p class="text-slate-400">Bank-grade encryption, role-based access control, and comprehensive audit logs keep your data secure.</p>
+        </div>
+
+        <!-- Feature Card 5 -->
+        <div class="group card-hover bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 border border-slate-700">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M11 17a1 1 0 001.447.894l4-2A1 1 0 0017 15V9.236a1 1 0 00-1.447-.894l-4 2a1 1 0 00-.553.894V17zM15.211 6.276a1 1 0 000-1.788l-4.764-2.382a1 1 0 00-.894 0L4.789 4.488a1 1 0 000 1.788l4.764 2.382a1 1 0 00.894 0l4.764-2.382zM4.447 8.342A1 1 0 003 9.236V15a1 1 0 00.553.894l4 2A1 1 0 009 17v-5.764a1 1 0 00-.553-.894l-4-2z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Seamless Integration</h3>
+          <p class="text-slate-400">Connect with your existing tools and platforms. Works with Slack, Teams, ServiceNow, and 100+ apps.</p>
+        </div>
+
+        <!-- Feature Card 6 -->
+        <div class="group card-hover bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 border border-slate-700">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-blue-500 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M3 6a3 3 0 013-3h10a1 1 0 01.8 1.6L14.25 8l2.55 3.4A1 1 0 0116 13H6a1 1 0 00-1 1v3a1 1 0 11-2 0V6z" clip-rule="evenodd"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Scale Globally</h3>
+          <p class="text-slate-400">Multilingual support, regional compliance, and infrastructure that grows with your organization.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-24 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-violet-600/10 to-fuchsia-600/10"></div>
+    <div class="container mx-auto px-6 relative">
+      <div class="grid md:grid-cols-4 gap-8 text-center">
+        <div>
+          <div class="text-5xl font-bold bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent mb-2">98%</div>
+          <div class="text-slate-400">Customer Satisfaction</div>
+        </div>
+        <div>
+          <div class="text-5xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-2">5M+</div>
+          <div class="text-slate-400">Queries Processed</div>
+        </div>
+        <div>
+          <div class="text-5xl font-bold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent mb-2">40%</div>
+          <div class="text-slate-400">Time Saved</div>
+        </div>
+        <div>
+          <div class="text-5xl font-bold bg-gradient-to-r from-orange-400 to-pink-400 bg-clip-text text-transparent mb-2">24/7</div>
+          <div class="text-slate-400">Availability</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-24">
+    <div class="container mx-auto px-6">
+      <div class="relative rounded-3xl overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-violet-600 to-fuchsia-600 opacity-90"></div>
+        <div class="absolute inset-0">
+          <div class="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+          <div class="absolute bottom-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+        </div>
+        <div class="relative px-6 py-16 text-center">
+          <h2 class="text-4xl md:text-5xl font-bold mb-4">Ready to Transform Your Workflow?</h2>
+          <p class="text-xl mb-8 text-white/90 max-w-2xl mx-auto">Join hundreds of companies using AI to work smarter, faster, and more efficiently.</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <button class="px-8 py-4 bg-white text-violet-600 rounded-full font-semibold text-lg hover:bg-slate-100 transition-all hover:scale-105">
+              Schedule Demo
+            </button>
+            <button class="px-8 py-4 bg-transparent border-2 border-white text-white rounded-full font-semibold text-lg hover:bg-white/10 transition-all">
+              View Pricing
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+
+{% endblock %}

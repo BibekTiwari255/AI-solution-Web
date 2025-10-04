@@ -1,0 +1,283 @@
+{% extends 'main/base.html' %}
+{% block content %}
+<!-- Dashboard Header -->
+<div class="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl p-8 text-white mb-8">
+  <div class="flex items-center justify-between">
+    <div>
+      <h1 class="text-3xl font-bold mb-2">Admin Dashboard</h1>
+      <p class="text-indigo-100">Monitor customer inquiries and business insights</p>
+    </div>
+    <div class="text-right">
+      <div class="text-sm text-indigo-200">Last updated</div>
+      <div class="text-lg font-semibold">{{ now|date:"M d, Y H:i" }}</div>
+    </div>
+  </div>
+</div>
+
+<!-- Stats Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+  <div class="bg-white rounded-xl p-6 shadow-lg border hover:shadow-xl transition-shadow">
+    <div class="flex items-center justify-between">
+      <div>
+        <p class="text-sm font-medium text-slate-600">Total Inquiries</p>
+        <p class="text-3xl font-bold text-slate-900">{{ total_inquiries }}</p>
+      </div>
+      <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center">
+        <i class="ri-customer-service-2-line text-indigo-600 text-xl"></i>
+      </div>
+    </div>
+    <div class="mt-4 flex items-center text-sm text-green-600">
+      <i class="ri-arrow-up-line mr-1"></i>
+      <span>+12% from last month</span>
+    </div>
+  </div>
+
+  <div class="bg-white rounded-xl p-6 shadow-lg border hover:shadow-xl transition-shadow">
+    <div class="flex items-center justify-between">
+      <div>
+        <p class="text-sm font-medium text-slate-600">This Week</p>
+        <p class="text-3xl font-bold text-slate-900">{{ total_inquiries|add:"-5" }}</p>
+      </div>
+      <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+        <i class="ri-calendar-week-line text-green-600 text-xl"></i>
+      </div>
+    </div>
+    <div class="mt-4 flex items-center text-sm text-green-600">
+      <i class="ri-arrow-up-line mr-1"></i>
+      <span>+8% from last week</span>
+    </div>
+  </div>
+
+  <div class="bg-white rounded-xl p-6 shadow-lg border hover:shadow-xl transition-shadow">
+    <div class="flex items-center justify-between">
+      <div>
+        <p class="text-sm font-medium text-slate-600">Today</p>
+        <p class="text-3xl font-bold text-slate-900">{{ total_inquiries|add:"-10" }}</p>
+      </div>
+      <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+        <i class="ri-calendar-today-line text-blue-600 text-xl"></i>
+      </div>
+    </div>
+    <div class="mt-4 flex items-center text-sm text-green-600">
+      <i class="ri-arrow-up-line mr-1"></i>
+      <span>+3 from yesterday</span>
+    </div>
+  </div>
+
+  <div class="bg-white rounded-xl p-6 shadow-lg border hover:shadow-xl transition-shadow">
+    <div class="flex items-center justify-between">
+      <div>
+        <p class="text-sm font-medium text-slate-600">Response Rate</p>
+        <p class="text-3xl font-bold text-slate-900">98%</p>
+      </div>
+      <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+        <i class="ri-chat-check-line text-purple-600 text-xl"></i>
+      </div>
+    </div>
+    <div class="mt-4 flex items-center text-sm text-green-600">
+      <i class="ri-arrow-up-line mr-1"></i>
+      <span>+2% improvement</span>
+    </div>
+  </div>
+</div>
+
+<!-- Recent Inquiries Section -->
+<div class="bg-white rounded-xl shadow-lg border">
+  <div class="p-6 border-b border-slate-200">
+    <div class="flex items-center justify-between">
+      <h2 class="text-xl font-semibold text-slate-900 flex items-center gap-2">
+        <i class="ri-list-check text-indigo-600"></i>
+        Recent Inquiries
+      </h2>
+      <div class="flex gap-2">
+        <button class="px-4 py-2 text-sm font-medium text-slate-700 bg-slate-100 rounded-lg hover:bg-slate-200 transition-colors">
+          <i class="ri-download-line mr-1"></i>
+          Export
+        </button>
+        <button class="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 transition-colors">
+          <i class="ri-refresh-line mr-1"></i>
+          Refresh
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="overflow-x-auto">
+    <table class="w-full">
+      <thead class="bg-slate-50">
+        <tr>
+          <th class="px-6 py-4 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">
+            <div class="flex items-center gap-2">
+              <i class="ri-user-line"></i>
+              Contact
+            </div>
+          </th>
+          <th class="px-6 py-4 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">
+            <div class="flex items-center gap-2">
+              <i class="ri-building-line"></i>
+              Company
+            </div>
+          </th>
+          <th class="px-6 py-4 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">
+            <div class="flex items-center gap-2">
+              <i class="ri-map-pin-line"></i>
+              Location
+            </div>
+          </th>
+          <th class="px-6 py-4 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">
+            <div class="flex items-center gap-2">
+              <i class="ri-time-line"></i>
+              Submitted
+            </div>
+          </th>
+          <th class="px-6 py-4 text-left text-xs font-medium text-slate-500 uppercase tracking-wider">
+            <div class="flex items-center gap-2">
+              <i class="ri-eye-line"></i>
+              Actions
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody class="bg-white divide-y divide-slate-200">
+        {% for inquiry in recent_inquiries %}
+        <tr class="hover:bg-slate-50 transition-colors">
+          <td class="px-6 py-4 whitespace-nowrap">
+            <div class="flex items-center">
+              <div class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
+                <i class="ri-user-line text-indigo-600"></i>
+              </div>
+              <div>
+                <div class="text-sm font-medium text-slate-900">{{ inquiry.full_name }}</div>
+                <div class="text-sm text-slate-500">{{ inquiry.email }}</div>
+                {% if inquiry.phone %}
+                <div class="text-xs text-slate-400">{{ inquiry.phone }}</div>
+                {% endif %}
+              </div>
+            </div>
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap">
+            <div class="text-sm text-slate-900">{{ inquiry.company_name|default:"—" }}</div>
+            {% if inquiry.job_title %}
+            <div class="text-sm text-slate-500">{{ inquiry.job_title }}</div>
+            {% endif %}
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap">
+            <div class="flex items-center gap-1">
+              <i class="ri-map-pin-line text-slate-400 text-sm"></i>
+              <span class="text-sm text-slate-900">{{ inquiry.country|default:"—" }}</span>
+            </div>
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap">
+            <div class="text-sm text-slate-900">{{ inquiry.created_at|date:"M d, Y" }}</div>
+            <div class="text-xs text-slate-500">{{ inquiry.created_at|time:"H:i" }}</div>
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+            <div class="flex gap-2">
+              <button class="text-indigo-600 hover:text-indigo-900 p-1 rounded hover:bg-indigo-50 transition-colors" title="View Details">
+                <i class="ri-eye-line"></i>
+              </button>
+              <button class="text-green-600 hover:text-green-900 p-1 rounded hover:bg-green-50 transition-colors" title="Reply">
+                <i class="ri-reply-line"></i>
+              </button>
+              <button class="text-slate-600 hover:text-slate-900 p-1 rounded hover:bg-slate-50 transition-colors" title="More Actions">
+                <i class="ri-more-2-line"></i>
+              </button>
+            </div>
+          </td>
+        </tr>
+        {% empty %}
+        <tr>
+          <td colspan="5" class="px-6 py-12 text-center">
+            <div class="flex flex-col items-center">
+              <div class="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mb-4">
+                <i class="ri-inbox-line text-slate-400 text-2xl"></i>
+              </div>
+              <h3 class="text-lg font-medium text-slate-900 mb-2">No inquiries yet</h3>
+              <p class="text-slate-500">Customer inquiries will appear here once they start coming in.</p>
+            </div>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Quick Actions -->
+<div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+  <div class="bg-white rounded-xl p-6 shadow-lg border">
+    <h3 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+      <i class="ri-settings-3-line text-indigo-600"></i>
+      Quick Actions
+    </h3>
+    <div class="space-y-3">
+      <button class="w-full text-left p-3 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-3">
+        <i class="ri-download-line text-slate-600"></i>
+        <span class="text-sm font-medium">Export All Data</span>
+      </button>
+      <button class="w-full text-left p-3 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-3">
+        <i class="ri-mail-line text-slate-600"></i>
+        <span class="text-sm font-medium">Send Newsletter</span>
+      </button>
+      <button class="w-full text-left p-3 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-3">
+        <i class="ri-bar-chart-line text-slate-600"></i>
+        <span class="text-sm font-medium">View Analytics</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="bg-white rounded-xl p-6 shadow-lg border">
+    <h3 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+      <i class="ri-trending-up-line text-green-600"></i>
+      Recent Activity
+    </h3>
+    <div class="space-y-3">
+      <div class="flex items-center gap-3 text-sm">
+        <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+        <span class="text-slate-600">New inquiry from John Doe</span>
+        <span class="text-slate-400 text-xs">2 min ago</span>
+      </div>
+      <div class="flex items-center gap-3 text-sm">
+        <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+        <span class="text-slate-600">Email sent to Jane Smith</span>
+        <span class="text-slate-400 text-xs">1 hour ago</span>
+      </div>
+      <div class="flex items-center gap-3 text-sm">
+        <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+        <span class="text-slate-600">Data exported successfully</span>
+        <span class="text-slate-400 text-xs">3 hours ago</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-white rounded-xl p-6 shadow-lg border">
+    <h3 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
+      <i class="ri-information-line text-blue-600"></i>
+      System Status
+    </h3>
+    <div class="space-y-3">
+      <div class="flex items-center justify-between">
+        <span class="text-sm text-slate-600">Database</span>
+        <span class="text-sm text-green-600 font-medium flex items-center gap-1">
+          <i class="ri-check-line"></i>
+          Online
+        </span>
+      </div>
+      <div class="flex items-center justify-between">
+        <span class="text-sm text-slate-600">Email Service</span>
+        <span class="text-sm text-green-600 font-medium flex items-center gap-1">
+          <i class="ri-check-line"></i>
+          Online
+        </span>
+      </div>
+      <div class="flex items-center justify-between">
+        <span class="text-sm text-slate-600">Storage</span>
+        <span class="text-sm text-yellow-600 font-medium flex items-center gap-1">
+          <i class="ri-alert-line"></i>
+          75% Used
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %} 
