@@ -124,17 +124,12 @@ class GalleryImage(models.Model):
     ]
     
     title = models.CharField(max_length=200)
-    description = models.TextField(blank=True)
     category = models.CharField(max_length=50, choices=CATEGORY_CHOICES)
-    image = models.ImageField(upload_to='gallery/')
+    image = models.ImageField(upload_to='gallery/', null=True, blank=True)
     alt_text = models.CharField(max_length=200, help_text="Alternative text for accessibility")
-    is_featured = models.BooleanField(default=False)
-    is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    class Meta:
-        ordering = ["-is_featured", "-created_at"]
 
     def __str__(self) -> str:
         return self.title

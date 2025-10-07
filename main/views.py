@@ -2,11 +2,12 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.contrib import messages
-from django.db import models
+from django.utils import timezone
+from django.db.models import Avg, Count
 
 from .forms import ContactForm
 from .models import (
-    Inquiry, Solution, Event, Article, GalleryImage, 
+    Inquiry, Solution, Event, Article, GalleryImage,
     Testimonial, PricingPlan
 )
 
@@ -16,14 +17,11 @@ def home(request):
 
 
 def solutions(request):
-    solutions = Solution.objects.filter(is_active=True)
-    featured_solutions = solutions.filter(is_featured=True)
-    pricing_plans = PricingPlan.objects.filter(is_active=True)
-    
+    solutions_qs = Solution.objects.filter(is_active=True)
     context = {
-        'solutions': solutions,
-        'featured_solutions': featured_solutions,
-        'pricing_plans': pricing_plans,
+        "solutions": solutions_qs,
+        "featured_solutions": solutions_qs.filter(is_featured=True),
+        "pricing_plans": PricingPlan.objects.all()
     }
     return render(request, "main/solutions.html", context)
 
@@ -33,75 +31,70 @@ def portfolio(request):
 
 
 def testimonials(request):
-    testimonials = Testimonial.objects.filter(is_active=True)
-    featured_testimonials = testimonials.filter(is_featured=True)
-    
-    # Get industry statistics
-    industry_stats = {}
-    for industry, _ in Testimonial.INDUSTRY_CHOICES:
-        count = testimonials.filter(industry=industry).count()
-        if count > 0:
-            avg_rating = testimonials.filter(industry=industry).aggregate(
-                avg_rating=models.Avg('rating')
-            )['avg_rating']
-            industry_stats[industry] = {
-                'count': count,
-                'avg_rating': round(avg_rating, 1)
-            }
-    
+    testimonials_qs = Testimonial.objects.filter(is_active=True)
+
+    # Industry stats in one query
+    industry_agg = (
+        testimonials_qs.values("industry")
+        .annotate(count=Count("id"), avg_rating=Avg("rating"))
+    )
+
+    # Convert to simple dict with rounded avg
+    industry_stats = {
+        row["industry"]: {
+            "count": row["count"],
+            "avg_rating": round(row["avg_rating"] or 0, 1),
+        }
+        for row in industry_agg
+        if row["count"] > 0
+    }
+
     context = {
-        'testimonials': testimonials,
-        'featured_testimonials': featured_testimonials,
-        'industry_stats': industry_stats,
+        "testimonials": testimonials_qs,
+        "featured_testimonials": testimonials_qs.filter(is_featured=True),
+        "industry_stats": industry_stats,
     }
     return render(request, "main/testimonials.html", context)
 
 
 def articles(request):
-    articles = Article.objects.filter(is_published=True)
-    featured_articles = articles.filter(is_featured=True)
-    
-    # Get category statistics
-    category_stats = {}
-    for category, _ in Article.CATEGORY_CHOICES:
-        count = articles.filter(category=category).count()
-        if count > 0:
-            category_stats[category] = count
-    
+    articles_qs = Article.objects.filter(is_published=True)
+
+    # Category stats in one query
+    category_stats = {
+        row["category"]: row["count"]
+        for row in articles_qs.values("category").annotate(count=Count("id"))
+        if row["count"] > 0
+    }
+
     context = {
-        'articles': articles,
-        'featured_articles': featured_articles,
-        'category_stats': category_stats,
+        "articles": articles_qs,
+        "featured_articles": articles_qs.filter(is_featured=True),
+        "category_stats": category_stats,
     }
     return render(request, "main/articles.html", context)
 
 
 def gallery(request):
-    images = GalleryImage.objects.filter(is_active=True)
-    featured_images = images.filter(is_featured=True)
-    
-    context = {
-        'images': images,
-        'featured_images': featured_images,
-    }
-    return render(request, "main/gallery.html", context)
+    images = GalleryImage.objects.all()
+    return render(request, "main/gallery.html", {"images": images})
 
 
 def events(request):
-    events = Event.objects.filter(is_active=True)
-    featured_events = events.filter(is_featured=True)
-    
-    # Get event type statistics
-    event_type_stats = {}
-    for event_type, _ in Event.EVENT_TYPE_CHOICES:
-        count = events.filter(event_type=event_type).count()
-        if count > 0:
-            event_type_stats[event_type] = count
-    
+    events_qs = Event.objects.filter(is_active=True)
+    upcoming = events_qs.filter(date__gte=timezone.now())
+
+    # Event type stats in one query (on active events; switch to 'upcoming' if desired)
+    event_type_stats = {
+        row["event_type"]: row["count"]
+        for row in events_qs.values("event_type").annotate(count=Count("id"))
+        if row["count"] > 0
+    }
+
     context = {
-        'events': events,
-        'featured_events': featured_events,
-        'event_type_stats': event_type_stats,
+        "events": events_qs,
+        "featured_events": upcoming.filter(is_featured=True),
+        "event_type_stats": event_type_stats,
     }
     return render(request, "main/events.html", context)
 
@@ -113,6 +106,8 @@ def contact(request):
             form.save()
             messages.success(request, "Thank you! We'll get back to you shortly.")
             return redirect(reverse("contact"))
+        else:
+            messages.error(request, "Please fix the errors below.")
     else:
         form = ContactForm()
     return render(request, "main/contact.html", {"form": form})
@@ -121,7 +116,7 @@ def contact(request):
 @login_required
 def admin_dashboard(request):
     total_inquiries = Inquiry.objects.count()
-    recent_inquiries = Inquiry.objects.all()[:10]
+    recent_inquiries = Inquiry.objects.all()[:10]  # Ordered by Meta on Inquiry
     return render(
         request,
         "main/admin_dashboard.html",

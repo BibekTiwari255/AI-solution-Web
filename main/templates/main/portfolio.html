@@ -1,6 +1,43 @@
-{% extends 'main/base.html' %}
-{% block content %}
-{% include 'main/partials/hero.html' with title='Success Stories' subtitle='Real results from our AI-powered solutions across diverse industries and use cases.' icon_class='ri-stack-line' badge_text='Proven Results' cta_text='View Case Studies' cta_url='#case-studies' %}
+{% extends 'main/base.html' %} {% block content %}
+<section
+  class="relative rounded-lg overflow-hidden bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 py-24"
+>
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+    <div
+      class="inline-block mb-4 px-4 py-1 bg-indigo-600 text-white text-xs font-semibold rounded-full shadow-sm"
+    >
+      Portfolio
+    </div>
+
+    <div class="flex justify-center mb-6">
+      <i class="ri-stack-line text-5xl text-indigo-400"></i>
+    </div>
+
+    <h1
+      class="text-4xl sm:text-5xl font-extrabold text-white mb-4 tracking-tight"
+    >
+      Portfolio
+    </h1>
+
+    <p class="text-gray-300 text-lg max-w-3xl mx-auto leading-relaxed mb-8">
+      Real results from our AI-powered solutions across diverse industries and
+      use cases.
+    </p>
+  </div>
+
+  <!-- Subtle overlay effect -->
+  <div
+    class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"
+  ></div>
+
+  <!-- Decorative blur circles -->
+  <div
+    class="absolute -top-32 -right-32 w-80 h-80 bg-indigo-600/30 rounded-full blur-3xl"
+  ></div>
+  <div
+    class="absolute -bottom-32 -left-32 w-80 h-80 bg-purple-500/20 rounded-full blur-3xl"
+  ></div>
+</section>
 
 <!-- Portfolio Stats -->
 <section class="mt-12">
@@ -26,13 +63,23 @@
 
 <!-- Featured Case Study -->
 <section class="mb-16">
-  <div class="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl p-8 text-white">
+  <div
+    class="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl p-8 text-white"
+  >
     <div class="flex items-center gap-2 mb-4">
-      <span class="px-3 py-1 bg-white/20 rounded-full text-sm font-medium">Featured Project</span>
+      <span class="px-3 py-1 bg-white/20 rounded-full text-sm font-medium"
+        >Featured Project</span
+      >
       <span class="text-indigo-200 text-sm">Financial Services</span>
     </div>
-    <h2 class="text-3xl font-bold mb-4">AI-Powered Customer Service Transformation at FinTech Global</h2>
-    <p class="text-indigo-100 text-lg mb-6 max-w-3xl">Transformed customer service operations with an intelligent virtual assistant that handles 80% of inquiries automatically, reducing response time by 75% and improving customer satisfaction scores.</p>
+    <h2 class="text-3xl font-bold mb-4">
+      AI-Powered Customer Service Transformation at FinTech Global
+    </h2>
+    <p class="text-indigo-100 text-lg mb-6 max-w-3xl">
+      Transformed customer service operations with an intelligent virtual
+      assistant that handles 80% of inquiries automatically, reducing response
+      time by 75% and improving customer satisfaction scores.
+    </p>
     <div class="grid md:grid-cols-3 gap-6 mb-6">
       <div class="bg-white/10 rounded-lg p-4">
         <div class="text-2xl font-bold mb-1">75%</div>
@@ -47,7 +94,10 @@
         <div class="text-sm text-indigo-200">Annual Savings</div>
       </div>
     </div>
-    <a href="#" class="inline-flex items-center gap-2 bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-indigo-50 transition-colors">
+    <a
+      href="#"
+      class="inline-flex items-center gap-2 bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-indigo-50 transition-colors"
+    >
       Read Full Case Study
       <i class="ri-arrow-right-line"></i>
     </a>
@@ -59,11 +109,15 @@
   <div class="flex items-center justify-between mb-8">
     <h2 class="text-2xl font-bold text-slate-900">All Case Studies</h2>
     <div class="flex gap-2">
-      <button class="px-4 py-2 text-sm font-medium text-slate-700 bg-slate-100 rounded-lg hover:bg-slate-200 transition-colors">
+      <button
+        class="px-4 py-2 text-sm font-medium text-slate-700 bg-slate-100 rounded-lg hover:bg-slate-200 transition-colors"
+      >
         <i class="ri-filter-line mr-1"></i>
         Filter
       </button>
-      <button class="px-4 py-2 text-sm font-medium text-slate-700 bg-slate-100 rounded-lg hover:bg-slate-200 transition-colors">
+      <button
+        class="px-4 py-2 text-sm font-medium text-slate-700 bg-slate-100 rounded-lg hover:bg-slate-200 transition-colors"
+      >
         <i class="ri-sort-desc mr-1"></i>
         Sort
       </button>
@@ -72,19 +126,32 @@
 
   <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
     <!-- Case Study 1 -->
-    <div class="bg-white rounded-xl border hover:shadow-lg transition-shadow group">
-      <div class="aspect-video bg-gradient-to-br from-green-100 to-emerald-100 rounded-t-xl flex items-center justify-center">
+    <div
+      class="bg-white rounded-xl border hover:shadow-lg transition-shadow group"
+    >
+      <div
+        class="aspect-video bg-gradient-to-br from-green-100 to-emerald-100 rounded-t-xl flex items-center justify-center"
+      >
         <i class="ri-hospital-line text-4xl text-green-600"></i>
       </div>
       <div class="p-6">
         <div class="flex items-center gap-2 mb-3">
-          <span class="px-2 py-1 bg-green-100 text-green-700 text-xs font-medium rounded">Healthcare</span>
+          <span
+            class="px-2 py-1 bg-green-100 text-green-700 text-xs font-medium rounded"
+            >Healthcare</span
+          >
           <span class="text-slate-500 text-sm">6 months</span>
         </div>
-        <h3 class="text-lg font-semibold text-slate-900 mb-2 group-hover:text-indigo-600 transition-colors">
+        <h3
+          class="text-lg font-semibold text-slate-900 mb-2 group-hover:text-indigo-600 transition-colors"
+        >
           AI-Powered Patient Triage System
         </h3>
-        <p class="text-slate-600 text-sm mb-4">Developed an intelligent triage system for a major hospital network that reduced patient wait times by 60% and improved diagnostic accuracy.</p>
+        <p class="text-slate-600 text-sm mb-4">
+          Developed an intelligent triage system for a major hospital network
+          that reduced patient wait times by 60% and improved diagnostic
+          accuracy.
+        </p>
         <div class="space-y-2 mb-4">
           <div class="flex items-center justify-between text-sm">
             <span class="text-slate-500">Client:</span>
@@ -95,7 +162,10 @@
             <span class="font-medium text-green-600">60% faster triage</span>
           </div>
         </div>
-        <a href="#" class="text-indigo-600 hover:text-indigo-700 font-medium text-sm inline-flex items-center gap-1">
+        <a
+          href="#"
+          class="text-indigo-600 hover:text-indigo-700 font-medium text-sm inline-flex items-center gap-1"
+        >
           View Details
           <i class="ri-arrow-right-line"></i>
         </a>
@@ -103,19 +173,31 @@
     </div>
 
     <!-- Case Study 2 -->
-    <div class="bg-white rounded-xl border hover:shadow-lg transition-shadow group">
-      <div class="aspect-video bg-gradient-to-br from-blue-100 to-cyan-100 rounded-t-xl flex items-center justify-center">
+    <div
+      class="bg-white rounded-xl border hover:shadow-lg transition-shadow group"
+    >
+      <div
+        class="aspect-video bg-gradient-to-br from-blue-100 to-cyan-100 rounded-t-xl flex items-center justify-center"
+      >
         <i class="ri-shopping-cart-line text-4xl text-blue-600"></i>
       </div>
       <div class="p-6">
         <div class="flex items-center gap-2 mb-3">
-          <span class="px-2 py-1 bg-blue-100 text-blue-700 text-xs font-medium rounded">Retail</span>
+          <span
+            class="px-2 py-1 bg-blue-100 text-blue-700 text-xs font-medium rounded"
+            >Retail</span
+          >
           <span class="text-slate-500 text-sm">4 months</span>
         </div>
-        <h3 class="text-lg font-semibold text-slate-900 mb-2 group-hover:text-indigo-600 transition-colors">
+        <h3
+          class="text-lg font-semibold text-slate-900 mb-2 group-hover:text-indigo-600 transition-colors"
+        >
           Intelligent Inventory Management
         </h3>
-        <p class="text-slate-600 text-sm mb-4">Created an AI-driven inventory system that reduced stockouts by 45% and optimized supply chain efficiency for a major retail chain.</p>
+        <p class="text-slate-600 text-sm mb-4">
+          Created an AI-driven inventory system that reduced stockouts by 45%
+          and optimized supply chain efficiency for a major retail chain.
+        </p>
         <div class="space-y-2 mb-4">
           <div class="flex items-center justify-between text-sm">
             <span class="text-slate-500">Client:</span>
@@ -126,7 +208,10 @@
             <span class="font-medium text-green-600">45% fewer stockouts</span>
           </div>
         </div>
-        <a href="#" class="text-indigo-600 hover:text-indigo-700 font-medium text-sm inline-flex items-center gap-1">
+        <a
+          href="#"
+          class="text-indigo-600 hover:text-indigo-700 font-medium text-sm inline-flex items-center gap-1"
+        >
           View Details
           <i class="ri-arrow-right-line"></i>
         </a>
@@ -134,19 +219,31 @@
     </div>
 
     <!-- Case Study 3 -->
-    <div class="bg-white rounded-xl border hover:shadow-lg transition-shadow group">
-      <div class="aspect-video bg-gradient-to-br from-purple-100 to-pink-100 rounded-t-xl flex items-center justify-center">
+    <div
+      class="bg-white rounded-xl border hover:shadow-lg transition-shadow group"
+    >
+      <div
+        class="aspect-video bg-gradient-to-br from-purple-100 to-pink-100 rounded-t-xl flex items-center justify-center"
+      >
         <i class="ri-building-line text-4xl text-purple-600"></i>
       </div>
       <div class="p-6">
         <div class="flex items-center gap-2 mb-3">
-          <span class="px-2 py-1 bg-purple-100 text-purple-700 text-xs font-medium rounded">Manufacturing</span>
+          <span
+            class="px-2 py-1 bg-purple-100 text-purple-700 text-xs font-medium rounded"
+            >Manufacturing</span
+          >
           <span class="text-slate-500 text-sm">8 months</span>
         </div>
-        <h3 class="text-lg font-semibold text-slate-900 mb-2 group-hover:text-indigo-600 transition-colors">
+        <h3
+          class="text-lg font-semibold text-slate-900 mb-2 group-hover:text-indigo-600 transition-colors"
+        >
           Predictive Maintenance System
         </h3>
-        <p class="text-slate-600 text-sm mb-4">Implemented AI-powered predictive maintenance that reduced equipment downtime by 70% and saved £2M annually in maintenance costs.</p>
+        <p class="text-slate-600 text-sm mb-4">
+          Implemented AI-powered predictive maintenance that reduced equipment
+          downtime by 70% and saved £2M annually in maintenance costs.
+        </p>
         <div class="space-y-2 mb-4">
           <div class="flex items-center justify-between text-sm">
             <span class="text-slate-500">Client:</span>
@@ -157,7 +254,10 @@
             <span class="font-medium text-green-600">70% less downtime</span>
           </div>
         </div>
-        <a href="#" class="text-indigo-600 hover:text-indigo-700 font-medium text-sm inline-flex items-center gap-1">
+        <a
+          href="#"
+          class="text-indigo-600 hover:text-indigo-700 font-medium text-sm inline-flex items-center gap-1"
+        >
           View Details
           <i class="ri-arrow-right-line"></i>
         </a>
@@ -165,19 +265,31 @@
     </div>
 
     <!-- Case Study 4 -->
-    <div class="bg-white rounded-xl border hover:shadow-lg transition-shadow group">
-      <div class="aspect-video bg-gradient-to-br from-orange-100 to-red-100 rounded-t-xl flex items-center justify-center">
+    <div
+      class="bg-white rounded-xl border hover:shadow-lg transition-shadow group"
+    >
+      <div
+        class="aspect-video bg-gradient-to-br from-orange-100 to-red-100 rounded-t-xl flex items-center justify-center"
+      >
         <i class="ri-graduation-cap-line text-4xl text-orange-600"></i>
       </div>
       <div class="p-6">
         <div class="flex items-center gap-2 mb-3">
-          <span class="px-2 py-1 bg-orange-100 text-orange-700 text-xs font-medium rounded">Education</span>
+          <span
+            class="px-2 py-1 bg-orange-100 text-orange-700 text-xs font-medium rounded"
+            >Education</span
+          >
           <span class="text-slate-500 text-sm">5 months</span>
         </div>
-        <h3 class="text-lg font-semibold text-slate-900 mb-2 group-hover:text-indigo-600 transition-colors">
+        <h3
+          class="text-lg font-semibold text-slate-900 mb-2 group-hover:text-indigo-600 transition-colors"
+        >
           Personalized Learning Platform
         </h3>
-        <p class="text-slate-600 text-sm mb-4">Built an AI-driven learning platform that personalized education paths for 50,000+ students, improving completion rates by 35%.</p>
+        <p class="text-slate-600 text-sm mb-4">
+          Built an AI-driven learning platform that personalized education paths
+          for 50,000+ students, improving completion rates by 35%.
+        </p>
         <div class="space-y-2 mb-4">
           <div class="flex items-center justify-between text-sm">
             <span class="text-slate-500">Client:</span>
@@ -185,10 +297,15 @@
           </div>
           <div class="flex items-center justify-between text-sm">
             <span class="text-slate-500">Impact:</span>
-            <span class="font-medium text-green-600">35% better completion</span>
+            <span class="font-medium text-green-600"
+              >35% better completion</span
+            >
           </div>
         </div>
-        <a href="#" class="text-indigo-600 hover:text-indigo-700 font-medium text-sm inline-flex items-center gap-1">
+        <a
+          href="#"
+          class="text-indigo-600 hover:text-indigo-700 font-medium text-sm inline-flex items-center gap-1"
+        >
           View Details
           <i class="ri-arrow-right-line"></i>
         </a>
@@ -196,19 +313,31 @@
     </div>
 
     <!-- Case Study 5 -->
-    <div class="bg-white rounded-xl border hover:shadow-lg transition-shadow group">
-      <div class="aspect-video bg-gradient-to-br from-teal-100 to-cyan-100 rounded-t-xl flex items-center justify-center">
+    <div
+      class="bg-white rounded-xl border hover:shadow-lg transition-shadow group"
+    >
+      <div
+        class="aspect-video bg-gradient-to-br from-teal-100 to-cyan-100 rounded-t-xl flex items-center justify-center"
+      >
         <i class="ri-bank-line text-4xl text-teal-600"></i>
       </div>
       <div class="p-6">
         <div class="flex items-center gap-2 mb-3">
-          <span class="px-2 py-1 bg-teal-100 text-teal-700 text-xs font-medium rounded">Banking</span>
+          <span
+            class="px-2 py-1 bg-teal-100 text-teal-700 text-xs font-medium rounded"
+            >Banking</span
+          >
           <span class="text-slate-500 text-sm">7 months</span>
         </div>
-        <h3 class="text-lg font-semibold text-slate-900 mb-2 group-hover:text-indigo-600 transition-colors">
+        <h3
+          class="text-lg font-semibold text-slate-900 mb-2 group-hover:text-indigo-600 transition-colors"
+        >
           Fraud Detection System
         </h3>
-        <p class="text-slate-600 text-sm mb-4">Developed an advanced fraud detection system that reduced false positives by 80% while maintaining 99.5% accuracy in fraud detection.</p>
+        <p class="text-slate-600 text-sm mb-4">
+          Developed an advanced fraud detection system that reduced false
+          positives by 80% while maintaining 99.5% accuracy in fraud detection.
+        </p>
         <div class="space-y-2 mb-4">
           <div class="flex items-center justify-between text-sm">
             <span class="text-slate-500">Client:</span>
@@ -216,10 +345,15 @@
           </div>
           <div class="flex items-center justify-between text-sm">
             <span class="text-slate-500">Impact:</span>
-            <span class="font-medium text-green-600">80% fewer false positives</span>
+            <span class="font-medium text-green-600"
+              >80% fewer false positives</span
+            >
           </div>
         </div>
-        <a href="#" class="text-indigo-600 hover:text-indigo-700 font-medium text-sm inline-flex items-center gap-1">
+        <a
+          href="#"
+          class="text-indigo-600 hover:text-indigo-700 font-medium text-sm inline-flex items-center gap-1"
+        >
           View Details
           <i class="ri-arrow-right-line"></i>
         </a>
@@ -227,19 +361,31 @@
     </div>
 
     <!-- Case Study 6 -->
-    <div class="bg-white rounded-xl border hover:shadow-lg transition-shadow group">
-      <div class="aspect-video bg-gradient-to-br from-indigo-100 to-purple-100 rounded-t-xl flex items-center justify-center">
+    <div
+      class="bg-white rounded-xl border hover:shadow-lg transition-shadow group"
+    >
+      <div
+        class="aspect-video bg-gradient-to-br from-indigo-100 to-purple-100 rounded-t-xl flex items-center justify-center"
+      >
         <i class="ri-truck-line text-4xl text-indigo-600"></i>
       </div>
       <div class="p-6">
         <div class="flex items-center gap-2 mb-3">
-          <span class="px-2 py-1 bg-indigo-100 text-indigo-700 text-xs font-medium rounded">Logistics</span>
+          <span
+            class="px-2 py-1 bg-indigo-100 text-indigo-700 text-xs font-medium rounded"
+            >Logistics</span
+          >
           <span class="text-slate-500 text-sm">6 months</span>
         </div>
-        <h3 class="text-lg font-semibold text-slate-900 mb-2 group-hover:text-indigo-600 transition-colors">
+        <h3
+          class="text-lg font-semibold text-slate-900 mb-2 group-hover:text-indigo-600 transition-colors"
+        >
           Route Optimization AI
         </h3>
-        <p class="text-slate-600 text-sm mb-4">Created an intelligent route optimization system that reduced delivery times by 30% and fuel costs by 25% for a logistics company.</p>
+        <p class="text-slate-600 text-sm mb-4">
+          Created an intelligent route optimization system that reduced delivery
+          times by 30% and fuel costs by 25% for a logistics company.
+        </p>
         <div class="space-y-2 mb-4">
           <div class="flex items-center justify-between text-sm">
             <span class="text-slate-500">Client:</span>
@@ -250,7 +396,10 @@
             <span class="font-medium text-green-600">30% faster delivery</span>
           </div>
         </div>
-        <a href="#" class="text-indigo-600 hover:text-indigo-700 font-medium text-sm inline-flex items-center gap-1">
+        <a
+          href="#"
+          class="text-indigo-600 hover:text-indigo-700 font-medium text-sm inline-flex items-center gap-1"
+        >
           View Details
           <i class="ri-arrow-right-line"></i>
         </a>
@@ -263,32 +412,48 @@
 <section class="mt-16">
   <h2 class="text-2xl font-bold text-slate-900 mb-8">Industry Expertise</h2>
   <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-    <div class="p-4 bg-white rounded-xl border hover:shadow-lg transition-shadow text-center group">
-      <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:bg-green-200 transition-colors">
+    <div
+      class="p-4 bg-white rounded-xl border hover:shadow-lg transition-shadow text-center group"
+    >
+      <div
+        class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:bg-green-200 transition-colors"
+      >
         <i class="ri-hospital-line text-green-600 text-xl"></i>
       </div>
       <h3 class="font-semibold text-slate-900 mb-1">Healthcare</h3>
       <p class="text-sm text-slate-500">8 projects</p>
     </div>
-    
-    <div class="p-4 bg-white rounded-xl border hover:shadow-lg transition-shadow text-center group">
-      <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:bg-blue-200 transition-colors">
+
+    <div
+      class="p-4 bg-white rounded-xl border hover:shadow-lg transition-shadow text-center group"
+    >
+      <div
+        class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:bg-blue-200 transition-colors"
+      >
         <i class="ri-shopping-cart-line text-blue-600 text-xl"></i>
       </div>
       <h3 class="font-semibold text-slate-900 mb-1">Retail</h3>
       <p class="text-sm text-slate-500">12 projects</p>
     </div>
-    
-    <div class="p-4 bg-white rounded-xl border hover:shadow-lg transition-shadow text-center group">
-      <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:bg-purple-200 transition-colors">
+
+    <div
+      class="p-4 bg-white rounded-xl border hover:shadow-lg transition-shadow text-center group"
+    >
+      <div
+        class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:bg-purple-200 transition-colors"
+      >
         <i class="ri-building-line text-purple-600 text-xl"></i>
       </div>
       <h3 class="font-semibold text-slate-900 mb-1">Manufacturing</h3>
       <p class="text-sm text-slate-500">6 projects</p>
     </div>
-    
-    <div class="p-4 bg-white rounded-xl border hover:shadow-lg transition-shadow text-center group">
-      <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:bg-orange-200 transition-colors">
+
+    <div
+      class="p-4 bg-white rounded-xl border hover:shadow-lg transition-shadow text-center group"
+    >
+      <div
+        class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:bg-orange-200 transition-colors"
+      >
         <i class="ri-bank-line text-orange-600 text-xl"></i>
       </div>
       <h3 class="font-semibold text-slate-900 mb-1">Financial</h3>
@@ -299,7 +464,9 @@
 
 <!-- Client Testimonials -->
 <section class="mt-16 bg-slate-50 rounded-2xl p-8">
-  <h2 class="text-2xl font-bold text-slate-900 mb-8 text-center">What Our Clients Say</h2>
+  <h2 class="text-2xl font-bold text-slate-900 mb-8 text-center">
+    What Our Clients Say
+  </h2>
   <div class="grid md:grid-cols-3 gap-8">
     <div class="bg-white rounded-xl p-6">
       <div class="flex items-center gap-1 mb-4">
@@ -309,9 +476,15 @@
         <i class="ri-star-fill text-amber-500"></i>
         <i class="ri-star-fill text-amber-500"></i>
       </div>
-      <p class="text-slate-700 mb-4">"AI-Solutions transformed our customer service operations. The AI assistant handles 80% of our inquiries automatically, and our customers love the instant responses."</p>
+      <p class="text-slate-700 mb-4">
+        "AI-Solutions transformed our customer service operations. The AI
+        assistant handles 80% of our inquiries automatically, and our customers
+        love the instant responses."
+      </p>
       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center">
+        <div
+          class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center"
+        >
           <i class="ri-user-line text-indigo-600"></i>
         </div>
         <div>
@@ -320,7 +493,7 @@
         </div>
       </div>
     </div>
-    
+
     <div class="bg-white rounded-xl p-6">
       <div class="flex items-center gap-1 mb-4">
         <i class="ri-star-fill text-amber-500"></i>
@@ -329,18 +502,25 @@
         <i class="ri-star-fill text-amber-500"></i>
         <i class="ri-star-fill text-amber-500"></i>
       </div>
-      <p class="text-slate-700 mb-4">"The predictive maintenance system has been a game-changer. We've reduced downtime by 70% and saved millions in maintenance costs."</p>
+      <p class="text-slate-700 mb-4">
+        "The predictive maintenance system has been a game-changer. We've
+        reduced downtime by 70% and saved millions in maintenance costs."
+      </p>
       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center">
+        <div
+          class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center"
+        >
           <i class="ri-user-line text-indigo-600"></i>
         </div>
         <div>
           <div class="font-semibold text-slate-900">Michael Chen</div>
-          <div class="text-sm text-slate-500">Operations Director, Auto Manufacturer</div>
+          <div class="text-sm text-slate-500">
+            Operations Director, Auto Manufacturer
+          </div>
         </div>
       </div>
     </div>
-    
+
     <div class="bg-white rounded-xl p-6">
       <div class="flex items-center gap-1 mb-4">
         <i class="ri-star-fill text-amber-500"></i>
@@ -349,14 +529,21 @@
         <i class="ri-star-fill text-amber-500"></i>
         <i class="ri-star-fill text-amber-500"></i>
       </div>
-      <p class="text-slate-700 mb-4">"Their rapid prototyping approach helped us validate our AI concept in just 2 weeks. The team's expertise and responsiveness were outstanding."</p>
+      <p class="text-slate-700 mb-4">
+        "Their rapid prototyping approach helped us validate our AI concept in
+        just 2 weeks. The team's expertise and responsiveness were outstanding."
+      </p>
       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center">
+        <div
+          class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center"
+        >
           <i class="ri-user-line text-indigo-600"></i>
         </div>
         <div>
           <div class="font-semibold text-slate-900">Emma Wilson</div>
-          <div class="text-sm text-slate-500">Product Manager, Retail Giant</div>
+          <div class="text-sm text-slate-500">
+            Product Manager, Retail Giant
+          </div>
         </div>
       </div>
     </div>
@@ -364,20 +551,31 @@
 </section>
 
 <!-- CTA Section -->
-<section class="mt-16 bg-gradient-to-r from-slate-900 to-slate-800 rounded-2xl p-8 text-white">
+<section
+  class="mt-16 bg-gradient-to-r from-slate-900 to-slate-800 rounded-2xl p-8 text-white"
+>
   <div class="max-w-3xl mx-auto text-center">
     <h2 class="text-3xl font-bold mb-4">Ready to Start Your AI Journey?</h2>
-    <p class="text-slate-300 mb-8">Join the companies that have already transformed their operations with our AI solutions.</p>
+    <p class="text-slate-300 mb-8">
+      Join the companies that have already transformed their operations with our
+      AI solutions.
+    </p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="/contact/" class="inline-flex items-center gap-2 bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-colors">
+      <a
+        href="/contact/"
+        class="inline-flex items-center gap-2 bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-colors"
+      >
         <i class="ri-rocket-line"></i>
         Start Your Project
       </a>
-      <a href="/solutions/" class="inline-flex items-center gap-2 border border-white/30 text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors">
+      <a
+        href="/solutions/"
+        class="inline-flex items-center gap-2 border border-white/30 text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors"
+      >
         <i class="ri-eye-line"></i>
         View Solutions
       </a>
     </div>
   </div>
 </section>
-{% endblock %} 
+{% endblock %}

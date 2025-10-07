@@ -1,36 +1,53 @@
-{% extends 'main/base.html' %}
-{% block content %}
-<div class="text-center py-8">
-  <i class="{{ icon_class }} text-4xl text-indigo-600"></i>
-  <h1 class="text-3xl font-bold mt-2">{{ title }}</h1>
-  <p class="text-gray-600">{{ subtitle }}</p>
-</div>
-
-
-
-<div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-  {% for image in images %}
-  <div class="bg-white rounded-xl border shadow-sm overflow-hidden hover:shadow-lg transition duration-300">
-    <!-- Image -->
-    <div class="relative aspect-video">
-      <img src="{{ image.image.url }}" alt="{{ image.alt_text }}"
-           class="w-full h-full object-cover">
-      {% if image.is_featured %}
-      <span class="absolute top-2 left-2 bg-yellow-500 text-white text-xs font-semibold px-2 py-1 rounded">
-        Featured
-      </span>
-      {% endif %}
+{% extends 'main/base.html' %} {% load static %} {% block content %}
+<section class="py-16">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-extrabold text-gray-200 sm:text-4xl">
+        Our Gallery
+      </h2>
+      <p class="mt-3 text-gray-400 max-w-2xl mx-auto">
+        A glimpse of our events, team, offices, and products.
+      </p>
     </div>
 
-    <!-- Card Content -->
-    <div class="p-4">
-      <h3 class="text-lg font-semibold text-gray-800 truncate">{{ image.title }}</h3>
-      <p class="text-sm text-gray-500 mb-2">{{ image.get_category_display }}</p>
-      {% if image.description %}
-      <p class="text-sm text-gray-600 line-clamp-2">{{ image.description }}</p>
-      {% endif %}
+    {% if images %}
+    <!-- Add place-items-center so last row centers if not full -->
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 place-items-center"
+    >
+      {% for image in images %}
+      <div
+        class="group relative rounded-2xl overflow-hidden shadow hover:shadow-xl transition w-full max-w-sm"
+      >
+        {% if image.image %}
+        <img
+          src="{{ image.image.url }}"
+          alt="{{ image.alt_text }}"
+          class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+        />
+        {% else %}
+        <img
+          src="{% static 'img/placeholder.jpg' %}"
+          alt="{{ image.alt_text|default:'Gallery image' }}"
+          class="w-full h-64 object-cover"
+        />
+        {% endif %}
+        <div
+          class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition flex items-end"
+        >
+          <div class="p-4 opacity-0 group-hover:opacity-100 transition">
+            <p class="text-white text-sm uppercase tracking-wide">
+              {{ image.get_category_display }}
+            </p>
+            <h3 class="text-white font-semibold">{{ image.title }}</h3>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
     </div>
+    {% else %}
+    <div class="text-center text-gray-500 py-20">No gallery images yet.</div>
+    {% endif %}
   </div>
-  {% endfor %}
-</div>
+</section>
 {% endblock %}

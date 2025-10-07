@@ -1,0 +1,589 @@
+[
+  {
+    "model": "main.inquiry",
+    "pk": 1,
+    "fields": {
+      "full_name": "John Carter",
+      "email": "john.carter@example.com",
+      "phone": "+44 20 7946 0001",
+      "company_name": "Carter AI Labs",
+      "country": "United Kingdom",
+      "job_title": "AI Project Manager",
+      "job_details": "Looking to integrate AI assistant into enterprise workflow.",
+      "created_at": "2025-10-01T09:00:00Z"
+    }
+  },
+  {
+    "model": "main.inquiry",
+    "pk": 2,
+    "fields": {
+      "full_name": "Sara Ahmed",
+      "email": "s.ahmed@retailx.co",
+      "phone": "+1 415 555 0192",
+      "company_name": "RetailX",
+      "country": "USA",
+      "job_title": "Head of Analytics",
+      "job_details": "Need a dashboard for multi-store analytics and forecasting.",
+      "created_at": "2025-10-02T11:20:00Z"
+    }
+  },
+  {
+    "model": "main.inquiry",
+    "pk": 3,
+    "fields": {
+      "full_name": "Kiran Shrestha",
+      "email": "kiran@mounttech.io",
+      "phone": "+977 9800000001",
+      "company_name": "MountTech",
+      "country": "Nepal",
+      "job_title": "CTO",
+      "job_details": "Request POC for agentic AI prototype integrated with CRM.",
+      "created_at": "2025-10-03T07:45:00Z"
+    }
+  },
+  {
+    "model": "main.inquiry",
+    "pk": 4,
+    "fields": {
+      "full_name": "Emily Zhang",
+      "email": "emily.zhang@mediscan.ai",
+      "phone": "+61 2 5550 0198",
+      "company_name": "MediScan AI",
+      "country": "Australia",
+      "job_title": "Product Owner",
+      "job_details": "Seeking HIPAA-compliant data pipeline with audit logs.",
+      "created_at": "2025-10-04T15:10:00Z"
+    }
+  },
+  {
+    "model": "main.inquiry",
+    "pk": 5,
+    "fields": {
+      "full_name": "Diego Martínez",
+      "email": "diego@logistica.mx",
+      "phone": "+52 55 1234 5678",
+      "company_name": "Logística MX",
+      "country": "Mexico",
+      "job_title": "Ops Manager",
+      "job_details": "Route optimization and ETA predictions for delivery fleet.",
+      "created_at": "2025-10-05T12:30:00Z"
+    }
+  },
+  {
+    "model": "main.solution",
+    "pk": 1,
+    "fields": {
+      "title": "AI Virtual Assistant for Support",
+      "description": "Multilingual assistant that automates FAQs, ticket triage, and handoffs.",
+      "category": "ai_assistant",
+      "image": "solutions/ai_assistant.jpg",
+      "features": [
+        "Multilingual",
+        "Ticket triage",
+        "Live handoff"
+      ],
+      "metrics": {
+        "resolution": "80%",
+        "availability": "24/7"
+      },
+      "pricing": "149.00",
+      "is_featured": true,
+      "is_active": true,
+      "created_at": "2025-09-30T10:00:00Z",
+      "updated_at": "2025-09-30T10:00:00Z"
+    }
+  },
+  {
+    "model": "main.solution",
+    "pk": 2,
+    "fields": {
+      "title": "Rapid Prototyping Studio",
+      "description": "Spin up product POCs in days using reusable components.",
+      "category": "rapid_prototyping",
+      "image": "solutions/prototyping.jpg",
+      "features": [
+        "UI kits",
+        "API scaffolds",
+        "Auto-deploy"
+      ],
+      "metrics": {
+        "time_to_demo": "72h",
+        "reuse_rate": "60%"
+      },
+      "pricing": "199.00",
+      "is_featured": false,
+      "is_active": true,
+      "created_at": "2025-10-01T10:00:00Z",
+      "updated_at": "2025-10-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "main.solution",
+    "pk": 3,
+    "fields": {
+      "title": "Analytics & Insights Hub",
+      "description": "Self-serve analytics with role-based dashboards and alerts.",
+      "category": "analytics",
+      "image": "solutions/analytics.jpg",
+      "features": [
+        "Forecasting",
+        "Cohort analysis",
+        "Anomaly detection"
+      ],
+      "metrics": {
+        "forecast_mape": "8%",
+        "alert_latency": "5m"
+      },
+      "pricing": "179.00",
+      "is_featured": false,
+      "is_active": true,
+      "created_at": "2025-10-02T10:00:00Z",
+      "updated_at": "2025-10-02T10:00:00Z"
+    }
+  },
+  {
+    "model": "main.solution",
+    "pk": 4,
+    "fields": {
+      "title": "Security & Compliance Toolkit",
+      "description": "Policy enforcement, PII redaction, audit trails and controls.",
+      "category": "security",
+      "image": "solutions/security.jpg",
+      "features": [
+        "PII redaction",
+        "Audit logs",
+        "Role-based access"
+      ],
+      "metrics": {
+        "coverage": "95%",
+        "rto": "15m"
+      },
+      "pricing": "129.00",
+      "is_featured": true,
+      "is_active": true,
+      "created_at": "2025-10-03T10:00:00Z",
+      "updated_at": "2025-10-03T10:00:00Z"
+    }
+  },
+  {
+    "model": "main.solution",
+    "pk": 5,
+    "fields": {
+      "title": "Workflow Automation Engine",
+      "description": "No-code rules and agentic tasks to eliminate repetitive ops.",
+      "category": "automation",
+      "image": "solutions/automation.jpg",
+      "features": [
+        "Event triggers",
+        "Human-in-the-loop",
+        "SLA tracking"
+      ],
+      "metrics": {
+        "tasks_auto": "70%",
+        "uptime": "99.9%"
+      },
+      "pricing": "189.00",
+      "is_featured": false,
+      "is_active": true,
+      "created_at": "2025-10-04T10:00:00Z",
+      "updated_at": "2025-10-04T10:00:00Z"
+    }
+  },
+  {
+    "model": "main.event",
+    "pk": 1,
+    "fields": {
+      "title": "AI for Startups Workshop",
+      "description": "Hands-on two-day build sprint for early-stage founders.",
+      "event_type": "workshop",
+      "image": "events/startups_workshop.jpg",
+      "date": "2025-11-15T09:00:00Z",
+      "location": "London Tech Hub",
+      "duration": "2 Days",
+      "price": "Free",
+      "spots_remaining": 25,
+      "is_featured": true,
+      "is_active": true,
+      "created_at": "2025-10-01T12:00:00Z",
+      "updated_at": "2025-10-01T12:00:00Z"
+    }
+  },
+  {
+    "model": "main.event",
+    "pk": 2,
+    "fields": {
+      "title": "Analytics in Retail Webinar",
+      "description": "How to build demand forecasts and reduce stockouts.",
+      "event_type": "webinar",
+      "image": "events/retail_webinar.jpg",
+      "date": "2025-12-05T15:00:00Z",
+      "location": "Online",
+      "duration": "90 minutes",
+      "price": "Free",
+      "spots_remaining": 300,
+      "is_featured": false,
+      "is_active": true,
+      "created_at": "2025-10-02T12:00:00Z",
+      "updated_at": "2025-10-02T12:00:00Z"
+    }
+  },
+  {
+    "model": "main.event",
+    "pk": 3,
+    "fields": {
+      "title": "Healthcare AI Conference",
+      "description": "Privacy-preserving learning and clinical deployments.",
+      "event_type": "conference",
+      "image": "events/health_conf.jpg",
+      "date": "2026-01-20T08:30:00Z",
+      "location": "Sydney Convention Centre",
+      "duration": "3 Days",
+      "price": "£149",
+      "spots_remaining": 120,
+      "is_featured": false,
+      "is_active": true,
+      "created_at": "2025-10-03T12:00:00Z",
+      "updated_at": "2025-10-03T12:00:00Z"
+    }
+  },
+  {
+    "model": "main.event",
+    "pk": 4,
+    "fields": {
+      "title": "AI Networking Night",
+      "description": "Meet practitioners, founders, and recruiters.",
+      "event_type": "networking",
+      "image": "events/networking_night.jpg",
+      "date": "2025-11-28T18:00:00Z",
+      "location": "Kathmandu Innovation Center",
+      "duration": "4 hours",
+      "price": "Free",
+      "spots_remaining": 80,
+      "is_featured": true,
+      "is_active": true,
+      "created_at": "2025-10-04T12:00:00Z",
+      "updated_at": "2025-10-04T12:00:00Z"
+    }
+  },
+  {
+    "model": "main.event",
+    "pk": 5,
+    "fields": {
+      "title": "MLOps Masterclass",
+      "description": "From notebooks to production with CI/CD and monitoring.",
+      "event_type": "masterclass",
+      "image": "events/mlops_masterclass.jpg",
+      "date": "2025-12-12T10:00:00Z",
+      "location": "Berlin AI Campus",
+      "duration": "1 Day",
+      "price": "£99",
+      "spots_remaining": 40,
+      "is_featured": false,
+      "is_active": true,
+      "created_at": "2025-10-05T12:00:00Z",
+      "updated_at": "2025-10-05T12:00:00Z"
+    }
+  },
+  {
+    "model": "main.article",
+    "pk": 1,
+    "fields": {
+      "title": "Optimizing AI Models for Edge Devices",
+      "slug": "optimizing-ai-models-edge-devices",
+      "description": "Deploy ML on constrained hardware using pruning, quantization, distillation.",
+      "content": "Edge deployments require careful balance of latency, accuracy, and power.",
+      "category": "ai",
+      "image": "articles/edge_ai.jpg",
+      "read_time": 6,
+      "author": "AI-Solutions Team",
+      "views": 152,
+      "is_featured": true,
+      "is_published": true,
+      "published_at": "2025-10-03T14:00:00Z",
+      "created_at": "2025-10-03T14:00:00Z",
+      "updated_at": "2025-10-03T14:00:00Z"
+    }
+  },
+  {
+    "model": "main.article",
+    "pk": 2,
+    "fields": {
+      "title": "A Practical Guide to Agentic Workflows",
+      "slug": "practical-agentic-workflows",
+      "description": "Design autonomous task loops with guardrails and human approvals.",
+      "content": "Agent design patterns include planners, tools, memory, and feedback loops.",
+      "category": "integration",
+      "image": "articles/agentic.jpg",
+      "read_time": 7,
+      "author": "AI-Solutions Team",
+      "views": 88,
+      "is_featured": false,
+      "is_published": true,
+      "published_at": "2025-10-04T10:30:00Z",
+      "created_at": "2025-10-04T10:30:00Z",
+      "updated_at": "2025-10-04T10:30:00Z"
+    }
+  },
+  {
+    "model": "main.article",
+    "pk": 3,
+    "fields": {
+      "title": "Security & Compliance for LLM Apps",
+      "slug": "security-compliance-llm-apps",
+      "description": "Threat modeling, prompt injection defenses, PII protection.",
+      "content": "Adopt allowlists, content filters, and rigorous logging to reduce risk.",
+      "category": "security",
+      "image": "articles/security.jpg",
+      "read_time": 5,
+      "author": "AI-Solutions Team",
+      "views": 71,
+      "is_featured": false,
+      "is_published": true,
+      "published_at": "2025-10-05T09:00:00Z",
+      "created_at": "2025-10-05T09:00:00Z",
+      "updated_at": "2025-10-05T09:00:00Z"
+    }
+  },
+  {
+    "model": "main.article",
+    "pk": 4,
+    "fields": {
+      "title": "Analytics 101: Cohorts, Funnels, and Segments",
+      "slug": "analytics-101-cohorts-funnels",
+      "description": "Understand user behavior to drive retention and revenue.",
+      "content": "Cohorts help compare user groups over time, funnels expose drop-offs.",
+      "category": "analytics",
+      "image": "articles/analytics.jpg",
+      "read_time": 8,
+      "author": "AI-Solutions Team",
+      "views": 214,
+      "is_featured": true,
+      "is_published": true,
+      "published_at": "2025-10-06T08:00:00Z",
+      "created_at": "2025-10-06T08:00:00Z",
+      "updated_at": "2025-10-06T08:00:00Z"
+    }
+  },
+  {
+    "model": "main.article",
+    "pk": 5,
+    "fields": {
+      "title": "Global AI Regulation Tracker",
+      "slug": "global-ai-regulation-tracker",
+      "description": "A living summary of emerging AI laws and frameworks worldwide.",
+      "content": "From EU AI Act to state-level proposals, track key obligations.",
+      "category": "global",
+      "image": "articles/regulation.jpg",
+      "read_time": 9,
+      "author": "AI-Solutions Team",
+      "views": 63,
+      "is_featured": false,
+      "is_published": true,
+      "published_at": "2025-10-07T07:30:00Z",
+      "created_at": "2025-10-07T07:30:00Z",
+      "updated_at": "2025-10-07T07:30:00Z"
+    }
+  },
+  {
+    "model": "main.galleryimage",
+    "pk": 1,
+    "fields": {
+      "title": "Team Standup",
+      "category": "team",
+      "image": "gallery/team_standup.jpg",
+      "alt_text": "Team daily standup meeting",
+      "created_at": "2025-10-01T06:10:00Z",
+      "updated_at": "2025-10-01T06:10:00Z"
+    }
+  },
+  {
+    "model": "main.galleryimage",
+    "pk": 2,
+    "fields": {
+      "title": "Prototype Demo",
+      "category": "workshops",
+      "image": "gallery/prototype_demo.jpg",
+      "alt_text": "Developers demoing a prototype",
+      "created_at": "2025-10-02T06:10:00Z",
+      "updated_at": "2025-10-02T06:10:00Z"
+    }
+  },
+  {
+    "model": "main.galleryimage",
+    "pk": 3,
+    "fields": {
+      "title": "Conference Booth",
+      "category": "conferences",
+      "image": "gallery/conference_booth.jpg",
+      "alt_text": "AI-Solutions conference booth",
+      "created_at": "2025-10-03T06:10:00Z",
+      "updated_at": "2025-10-03T06:10:00Z"
+    }
+  },
+  {
+    "model": "main.galleryimage",
+    "pk": 4,
+    "fields": {
+      "title": "Product Photoshoot",
+      "category": "products",
+      "image": "gallery/product_photoshoot.jpg",
+      "alt_text": "Close-up of product",
+      "created_at": "2025-10-04T06:10:00Z",
+      "updated_at": "2025-10-04T06:10:00Z"
+    }
+  },
+  {
+    "model": "main.galleryimage",
+    "pk": 5,
+    "fields": {
+      "title": "Office Lounge",
+      "category": "office",
+      "image": "gallery/office_lounge.jpg",
+      "alt_text": "Modern office lounge area",
+      "created_at": "2025-10-05T06:10:00Z",
+      "updated_at": "2025-10-05T06:10:00Z"
+    }
+  },
+  {
+    "model": "main.testimonial",
+    "pk": 1,
+    "fields": {
+      "name": "Sophia James",
+      "position": "COO",
+      "company": "RetailX",
+      "industry": "retail",
+      "content": "We cut ticket resolution times by half with their AI assistant.",
+      "rating": 5,
+      "avatar_initials": "SJ",
+      "is_featured": true,
+      "is_active": true,
+      "created_at": "2025-10-01T13:00:00Z",
+      "updated_at": "2025-10-01T13:00:00Z"
+    }
+  },
+  {
+    "model": "main.testimonial",
+    "pk": 2,
+    "fields": {
+      "name": "Dr. Amit Verma",
+      "position": "Chief Medical Officer",
+      "company": "CareOne",
+      "industry": "healthcare",
+      "content": "Privacy-first workflows let us move faster while staying compliant.",
+      "rating": 4,
+      "avatar_initials": "AV",
+      "is_featured": false,
+      "is_active": true,
+      "created_at": "2025-10-02T13:00:00Z",
+      "updated_at": "2025-10-02T13:00:00Z"
+    }
+  },
+  {
+    "model": "main.testimonial",
+    "pk": 3,
+    "fields": {
+      "name": "Marta Novak",
+      "position": "CFO",
+      "company": "Manufacturo",
+      "industry": "manufacturing",
+      "content": "Forecasts improved our materials planning and reduced waste.",
+      "rating": 5,
+      "avatar_initials": "MN",
+      "is_featured": false,
+      "is_active": true,
+      "created_at": "2025-10-03T13:00:00Z",
+      "updated_at": "2025-10-03T13:00:00Z"
+    }
+  },
+  {
+    "model": "main.testimonial",
+    "pk": 4,
+    "fields": {
+      "name": "Luke Bennett",
+      "position": "Head of Risk",
+      "company": "FinFlow",
+      "industry": "financial",
+      "content": "Audit trails and RBAC simplified our controls and reviews.",
+      "rating": 5,
+      "avatar_initials": "LB",
+      "is_featured": true,
+      "is_active": true,
+      "created_at": "2025-10-04T13:00:00Z",
+      "updated_at": "2025-10-04T13:00:00Z"
+    }
+  },
+  {
+    "model": "main.testimonial",
+    "pk": 5,
+    "fields": {
+      "name": "Priya Desai",
+      "position": "VP Engineering",
+      "company": "TechSphere",
+      "industry": "technology",
+      "content": "Agentic automation eliminated hours of manual triage each week.",
+      "rating": 4,
+      "avatar_initials": "PD",
+      "is_featured": false,
+      "is_active": true,
+      "created_at": "2025-10-05T13:00:00Z",
+      "updated_at": "2025-10-05T13:00:00Z"
+    }
+  },
+  {
+    "model": "main.pricingplan",
+    "pk": 1,
+    "fields": {
+      "name": "Free",
+      "price": "free",
+      "period": "per month",
+      "description": "For free use.",
+      "features": [
+        "One use 3 projects",
+        "No support",
+        "No advanced dashboards"
+      ],
+      "is_popular": false,
+      "is_active": true,
+      "created_at": "2025-10-06T10:10:00Z",
+      "updated_at": "2025-10-06T10:10:00Z"
+    }
+  },
+  {
+    "model": "main.pricingplan",
+    "pk": 2,
+    "fields": {
+      "name": "Starter",
+      "price": "£29",
+      "period": "per month",
+      "description": "Best for prototypes and small teams.",
+      "features": [
+        "Up to 3 projects",
+        "Basic analytics",
+        "Community support"
+      ],
+      "is_popular": false,
+      "is_active": true,
+      "created_at": "2025-10-06T10:00:00Z",
+      "updated_at": "2025-10-06T10:00:00Z"
+    }
+  },
+  {
+    "model": "main.pricingplan",
+    "pk": 3,
+    "fields": {
+      "name": "Growth",
+      "price": "£99",
+      "period": "per month",
+      "description": "For growing teams that need scale and support.",
+      "features": [
+        "Unlimited projects",
+        "Priority email support",
+        "Advanced dashboards"
+      ],
+      "is_popular": true,
+      "is_active": true,
+      "created_at": "2025-10-06T10:10:00Z",
+      "updated_at": "2025-10-06T10:10:00Z"
+    }
+  }
+]

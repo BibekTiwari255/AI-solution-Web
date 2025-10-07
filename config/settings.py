@@ -25,20 +25,20 @@ SECRET_KEY = 'django-insecure-m21cw3*1n8@b62g!8_*#0z=*b#b9(5#b+y_foh!w(omp$ugl0^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',   
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
-    
+
     #app
     'main',
 ]
@@ -129,3 +129,18 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+JAZZMIN_SETTINGS = {
+    "site_title": "AI-Solutions Admin",
+    "site_header": "AI-Solutions",
+    "welcome_sign": "Welcome to AI-Solutions Admin",
+    "copyright": "AI-Solutions",
+    "show_ui_builder": False,
+    "brand_color": "#4f46e5",
+    "topmenu_links": [
+        {"name": "Site", "url": "/", "new_tab": True},
+        {"app": "main"},
+    ],
+    "usermenu_links": [{"name": "Docs", "url": "/admin/doc/"}],
+}

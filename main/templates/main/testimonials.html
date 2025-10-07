@@ -1,6 +1,52 @@
-{% extends 'main/base.html' %}
-{% block content %}
-{% include 'main/partials/hero.html' with title='Customer Testimonials' subtitle='Hear from our satisfied clients who have transformed their businesses with our AI solutions.' icon_class='ri-chat-1-line' badge_text='5-Star Reviews' cta_text='Read All Reviews' cta_url='#all-testimonials' %}
+{% extends 'main/base.html' %} {% block content %}
+<section
+  class="relative rounded-lg overflow-hidden bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 py-24"
+>
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+    <div
+      class="inline-block mb-4 px-4 py-1 bg-indigo-600 text-white text-xs font-semibold rounded-full shadow-sm"
+    >
+      Testimonials
+    </div>
+
+    <div class="flex justify-center mb-6">
+      <i class="{{ icon_class }} text-5xl text-indigo-400"></i>
+    </div>
+
+    <h1
+      class="text-4xl sm:text-5xl font-extrabold text-white mb-4 tracking-tight"
+    >
+      Testimonials
+    </h1>
+
+    <p class="text-gray-300 text-lg max-w-3xl mx-auto leading-relaxed mb-8">
+      What our clients say about us
+    </p>
+
+    <div class="flex justify-center">
+      <a
+        href="{{ cta_url }}"
+        class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-medium shadow-md transition"
+      >
+        <i class="ri-arrow-right-line text-lg"></i>
+        View All Testimonials
+      </a>
+    </div>
+  </div>
+
+  <!-- Subtle overlay effect -->
+  <div
+    class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"
+  ></div>
+
+  <!-- Decorative blur circles -->
+  <div
+    class="absolute -top-32 -right-32 w-80 h-80 bg-indigo-600/30 rounded-full blur-3xl"
+  ></div>
+  <div
+    class="absolute -bottom-32 -left-32 w-80 h-80 bg-purple-500/20 rounded-full blur-3xl"
+  ></div>
+</section>
 
 <!-- Stats Section -->
 <section class="mt-12">
@@ -26,11 +72,15 @@
 
 <!-- Featured Testimonials -->
 <section class="mb-16">
-  <h2 class="text-3xl font-bold text-slate-900 mb-8 text-center">Featured Reviews</h2>
-  
+  <h2 class="text-2xl font-bold text-gray-400 mb-8 text-center">
+    Featured Reviews
+  </h2>
+
   <div class="grid lg:grid-cols-2 gap-8">
     <!-- Featured Testimonial 1 -->
-    <div class="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl p-8 border">
+    <div
+      class="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl p-8 border"
+    >
       <div class="flex items-center gap-1 mb-4">
         <i class="ri-star-fill text-amber-500 text-xl"></i>
         <i class="ri-star-fill text-amber-500 text-xl"></i>
@@ -39,22 +89,32 @@
         <i class="ri-star-fill text-amber-500 text-xl"></i>
       </div>
       <blockquote class="text-slate-700 text-lg mb-6">
-        "AI-Solutions transformed our customer service operations completely. The AI assistant handles 80% of our inquiries automatically, and our customers love the instant responses. We've seen a 75% reduction in response time and a significant improvement in customer satisfaction scores."
+        "AI-Solutions transformed our customer service operations completely.
+        The AI assistant handles 80% of our inquiries automatically, and our
+        customers love the instant responses. We've seen a 75% reduction in
+        response time and a significant improvement in customer satisfaction
+        scores."
       </blockquote>
       <div class="flex items-center gap-4">
-        <div class="w-16 h-16 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full flex items-center justify-center">
+        <div
+          class="w-16 h-16 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full flex items-center justify-center"
+        >
           <span class="text-white font-bold text-xl">SJ</span>
         </div>
         <div>
           <div class="font-semibold text-slate-900">Sarah Johnson</div>
           <div class="text-slate-600">CTO, FinTech Global</div>
-          <div class="text-sm text-slate-500">Financial Services • 500+ employees</div>
+          <div class="text-sm text-slate-500">
+            Financial Services • 500+ employees
+          </div>
         </div>
       </div>
     </div>
 
     <!-- Featured Testimonial 2 -->
-    <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 border">
+    <div
+      class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 border"
+    >
       <div class="flex items-center gap-1 mb-4">
         <i class="ri-star-fill text-amber-500 text-xl"></i>
         <i class="ri-star-fill text-amber-500 text-xl"></i>
@@ -63,16 +123,25 @@
         <i class="ri-star-fill text-amber-500 text-xl"></i>
       </div>
       <blockquote class="text-slate-700 text-lg mb-6">
-        "The rapid prototyping service was exactly what we needed. We went from concept to working prototype in just 48 hours! The team's expertise and responsiveness were outstanding. This helped us secure £2M in funding for our AI project."
+        "The rapid prototyping service was exactly what we needed. We went from
+        concept to working prototype in just 48 hours! The team's expertise and
+        responsiveness were outstanding. This helped us secure £2M in funding
+        for our AI project."
       </blockquote>
       <div class="flex items-center gap-4">
-        <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center">
+        <div
+          class="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center"
+        >
           <span class="text-white font-bold text-xl">MC</span>
         </div>
         <div>
           <div class="font-semibold text-slate-900">Michael Chen</div>
-          <div class="text-slate-600">Operations Director, Auto Manufacturer</div>
-          <div class="text-sm text-slate-500">Manufacturing • 2,000+ employees</div>
+          <div class="text-slate-600">
+            Operations Director, Auto Manufacturer
+          </div>
+          <div class="text-sm text-slate-500">
+            Manufacturing • 2,000+ employees
+          </div>
         </div>
       </div>
     </div>
@@ -82,13 +151,17 @@
 <!-- All Testimonials -->
 <section id="all-testimonials" class="mb-16">
   <div class="flex items-center justify-between mb-8">
-    <h2 class="text-3xl font-bold text-slate-900">All Testimonials</h2>
+    <h2 class="text-2xl font-bold text-gray-400">All Testimonials</h2>
     <div class="flex gap-2">
-      <button class="px-4 py-2 text-sm font-medium text-slate-700 bg-slate-100 rounded-lg hover:bg-slate-200 transition-colors">
+      <button
+        class="px-4 py-2 text-sm font-medium text-slate-700 bg-slate-100 rounded-lg hover:bg-slate-200 transition-colors"
+      >
         <i class="ri-filter-line mr-1"></i>
         Filter
       </button>
-      <button class="px-4 py-2 text-sm font-medium text-slate-700 bg-slate-100 rounded-lg hover:bg-slate-200 transition-colors">
+      <button
+        class="px-4 py-2 text-sm font-medium text-slate-700 bg-slate-100 rounded-lg hover:bg-slate-200 transition-colors"
+      >
         <i class="ri-sort-desc mr-1"></i>
         Sort
       </button>
@@ -107,15 +180,21 @@
           <i class="ri-star-fill text-amber-500"></i>
         </div>
         <blockquote class="text-slate-700 mb-4">
-          "The AI security monitor has been a game-changer for our IT department. We've reduced security incidents by 90% and our compliance reporting is now fully automated."
+          "The AI security monitor has been a game-changer for our IT
+          department. We've reduced security incidents by 90% and our compliance
+          reporting is now fully automated."
         </blockquote>
         <div class="flex items-center gap-3">
-          <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+          <div
+            class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center"
+          >
             <span class="text-blue-600 font-bold">EW</span>
           </div>
           <div>
             <div class="font-semibold text-slate-900">Emma Wilson</div>
-            <div class="text-sm text-slate-500">IT Director, Healthcare Group</div>
+            <div class="text-sm text-slate-500">
+              IT Director, Healthcare Group
+            </div>
           </div>
         </div>
       </div>
@@ -132,15 +211,21 @@
           <i class="ri-star-fill text-amber-500"></i>
         </div>
         <blockquote class="text-slate-700 mb-4">
-          "Outstanding service! The workflow automation solution streamlined our processes and saved us 40 hours per week. The ROI was evident within the first month."
+          "Outstanding service! The workflow automation solution streamlined our
+          processes and saved us 40 hours per week. The ROI was evident within
+          the first month."
         </blockquote>
         <div class="flex items-center gap-3">
-          <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+          <div
+            class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center"
+          >
             <span class="text-green-600 font-bold">DR</span>
           </div>
           <div>
             <div class="font-semibold text-slate-900">David Rodriguez</div>
-            <div class="text-sm text-slate-500">Operations Manager, Retail Chain</div>
+            <div class="text-sm text-slate-500">
+              Operations Manager, Retail Chain
+            </div>
           </div>
         </div>
       </div>
@@ -157,15 +242,21 @@
           <i class="ri-star-fill text-amber-500"></i>
         </div>
         <blockquote class="text-slate-700 mb-4">
-          "The UX insights tool helped us identify critical friction points in our user journey. We improved our conversion rate by 35% after implementing their recommendations."
+          "The UX insights tool helped us identify critical friction points in
+          our user journey. We improved our conversion rate by 35% after
+          implementing their recommendations."
         </blockquote>
         <div class="flex items-center gap-3">
-          <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+          <div
+            class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center"
+          >
             <span class="text-purple-600 font-bold">LT</span>
           </div>
           <div>
             <div class="font-semibold text-slate-900">Lisa Thompson</div>
-            <div class="text-sm text-slate-500">Product Manager, E-commerce Platform</div>
+            <div class="text-sm text-slate-500">
+              Product Manager, E-commerce Platform
+            </div>
           </div>
         </div>
       </div>
@@ -182,10 +273,14 @@
           <i class="ri-star-fill text-amber-500"></i>
         </div>
         <blockquote class="text-slate-700 mb-4">
-          "The DevOps copilot has revolutionized our deployment process. We've reduced deployment time by 60% and eliminated 95% of our manual errors."
+          "The DevOps copilot has revolutionized our deployment process. We've
+          reduced deployment time by 60% and eliminated 95% of our manual
+          errors."
         </blockquote>
         <div class="flex items-center gap-3">
-          <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
+          <div
+            class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center"
+          >
             <span class="text-orange-600 font-bold">JK</span>
           </div>
           <div>
@@ -207,15 +302,21 @@
           <i class="ri-star-fill text-amber-500"></i>
         </div>
         <blockquote class="text-slate-700 mb-4">
-          "The data analytics solution provided insights we never knew existed. Our decision-making process is now data-driven and we've increased efficiency by 50%."
+          "The data analytics solution provided insights we never knew existed.
+          Our decision-making process is now data-driven and we've increased
+          efficiency by 50%."
         </blockquote>
         <div class="flex items-center gap-3">
-          <div class="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center">
+          <div
+            class="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center"
+          >
             <span class="text-teal-600 font-bold">AM</span>
           </div>
           <div>
             <div class="font-semibold text-slate-900">Anna Martinez</div>
-            <div class="text-sm text-slate-500">Data Analyst, Consulting Firm</div>
+            <div class="text-sm text-slate-500">
+              Data Analyst, Consulting Firm
+            </div>
           </div>
         </div>
       </div>
@@ -232,10 +333,14 @@
           <i class="ri-star-fill text-amber-500"></i>
         </div>
         <blockquote class="text-slate-700 mb-4">
-          "Exceptional support team and incredible results. The AI solutions integrated seamlessly with our existing systems and delivered immediate value."
+          "Exceptional support team and incredible results. The AI solutions
+          integrated seamlessly with our existing systems and delivered
+          immediate value."
         </blockquote>
         <div class="flex items-center gap-3">
-          <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
+          <div
+            class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center"
+          >
             <span class="text-red-600 font-bold">RB</span>
           </div>
           <div>
@@ -250,38 +355,48 @@
 
 <!-- Industry Testimonials -->
 <section class="mb-16">
-  <h2 class="text-3xl font-bold text-slate-900 mb-8 text-center">Testimonials by Industry</h2>
-  
+  <h2 class="text-2xl font-bold text-gray-400 mb-8 text-center">
+    Testimonials by Industry
+  </h2>
+
   <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
     <div class="bg-white rounded-xl p-6 border text-center">
-      <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+      <div
+        class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4"
+      >
         <i class="ri-hospital-line text-green-600 text-2xl"></i>
       </div>
       <h3 class="font-semibold text-slate-900 mb-2">Healthcare</h3>
       <div class="text-2xl font-bold text-green-600 mb-1">4.9/5</div>
       <div class="text-sm text-slate-500">12 reviews</div>
     </div>
-    
+
     <div class="bg-white rounded-xl p-6 border text-center">
-      <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+      <div
+        class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
+      >
         <i class="ri-shopping-cart-line text-blue-600 text-2xl"></i>
       </div>
       <h3 class="font-semibold text-slate-900 mb-2">Retail</h3>
       <div class="text-2xl font-bold text-blue-600 mb-1">4.8/5</div>
       <div class="text-sm text-slate-500">18 reviews</div>
     </div>
-    
+
     <div class="bg-white rounded-xl p-6 border text-center">
-      <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+      <div
+        class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4"
+      >
         <i class="ri-building-line text-purple-600 text-2xl"></i>
       </div>
       <h3 class="font-semibold text-slate-900 mb-2">Manufacturing</h3>
       <div class="text-2xl font-bold text-purple-600 mb-1">4.9/5</div>
       <div class="text-sm text-slate-500">8 reviews</div>
     </div>
-    
+
     <div class="bg-white rounded-xl p-6 border text-center">
-      <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+      <div
+        class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4"
+      >
         <i class="ri-bank-line text-orange-600 text-2xl"></i>
       </div>
       <h3 class="font-semibold text-slate-900 mb-2">Financial</h3>
@@ -293,33 +408,117 @@
 
 <!-- Trust Indicators -->
 <section class="mb-16 bg-slate-50 rounded-2xl p-8">
-  <h2 class="text-3xl font-bold text-slate-900 mb-8 text-center">Trusted by Industry Leaders</h2>
-  
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+  <h2 class="text-xl font-bold text-gray-400 mb-10 text-center">
+    Trusted by Industry Leaders
+  </h2>
+
+  <div
+    class="grid grid-cols-2 md:grid-cols-4 gap-10 items-center justify-items-center"
+  >
+    <!-- NHS -->
     <div class="text-center">
-      <div class="w-20 h-20 bg-white rounded-lg flex items-center justify-center mx-auto mb-3 shadow-sm">
-        <span class="text-2xl font-bold text-slate-600">NHS</span>
+      <div
+        class="w-24 h-24 bg-white rounded-xl flex items-center justify-center mx-auto mb-3 shadow-sm hover:shadow-md transition"
+      >
+        <svg
+          viewBox="0 0 100 40"
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-16 h-8 text-slate-600"
+        >
+          <rect width="100" height="40" rx="6" fill="#005EB8" />
+          <text
+            x="50"
+            y="26"
+            font-size="20"
+            font-family="Arial, sans-serif"
+            text-anchor="middle"
+            fill="white"
+            font-weight="bold"
+          >
+            NHS
+          </text>
+        </svg>
       </div>
       <div class="text-sm text-slate-500">Healthcare</div>
     </div>
-    
+
+    <!-- Tesco -->
     <div class="text-center">
-      <div class="w-20 h-20 bg-white rounded-lg flex items-center justify-center mx-auto mb-3 shadow-sm">
-        <span class="text-2xl font-bold text-slate-600">Tesco</span>
+      <div
+        class="w-24 h-24 bg-white rounded-xl flex items-center justify-center mx-auto mb-3 shadow-sm hover:shadow-md transition"
+      >
+        <svg
+          viewBox="0 0 100 40"
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-16 h-8"
+        >
+          <rect width="100" height="40" rx="6" fill="#00539F" />
+          <text
+            x="50"
+            y="26"
+            font-size="20"
+            font-family="Arial, sans-serif"
+            text-anchor="middle"
+            fill="white"
+            font-weight="bold"
+          >
+            TESCO
+          </text>
+        </svg>
       </div>
       <div class="text-sm text-slate-500">Retail</div>
     </div>
-    
+
+    <!-- HSBC -->
     <div class="text-center">
-      <div class="w-20 h-20 bg-white rounded-lg flex items-center justify-center mx-auto mb-3 shadow-sm">
-        <span class="text-2xl font-bold text-slate-600">HSBC</span>
+      <div
+        class="w-24 h-24 bg-white rounded-xl flex items-center justify-center mx-auto mb-3 shadow-sm hover:shadow-md transition"
+      >
+        <svg
+          viewBox="0 0 100 40"
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-16 h-8"
+        >
+          <rect width="100" height="40" rx="6" fill="#DB0011" />
+          <text
+            x="50"
+            y="26"
+            font-size="18"
+            font-family="Arial, sans-serif"
+            text-anchor="middle"
+            fill="white"
+            font-weight="bold"
+          >
+            HSBC
+          </text>
+        </svg>
       </div>
       <div class="text-sm text-slate-500">Banking</div>
     </div>
-    
+
+    <!-- BMW -->
     <div class="text-center">
-      <div class="w-20 h-20 bg-white rounded-lg flex items-center justify-center mx-auto mb-3 shadow-sm">
-        <span class="text-2xl font-bold text-slate-600">BMW</span>
+      <div
+        class="w-24 h-24 bg-white rounded-xl flex items-center justify-center mx-auto mb-3 shadow-sm hover:shadow-md transition"
+      >
+        <svg
+          viewBox="0 0 100 40"
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-16 h-8"
+        >
+          <rect width="100" height="40" rx="6" fill="#1C69D4" />
+          <text
+            x="50"
+            y="26"
+            font-size="20"
+            font-family="Arial, sans-serif"
+            text-anchor="middle"
+            fill="white"
+            font-weight="bold"
+          >
+            BMW
+          </text>
+        </svg>
       </div>
       <div class="text-sm text-slate-500">Manufacturing</div>
     </div>
@@ -327,20 +526,31 @@
 </section>
 
 <!-- CTA Section -->
-<section class="bg-gradient-to-r from-slate-900 to-slate-800 rounded-2xl p-8 text-white">
+<section
+  class="bg-gradient-to-r from-slate-900 to-slate-800 rounded-2xl p-8 text-white"
+>
   <div class="max-w-3xl mx-auto text-center">
     <h2 class="text-3xl font-bold mb-4">Join Our Satisfied Customers</h2>
-    <p class="text-slate-300 mb-8">Experience the same transformation that our clients have achieved with our AI solutions.</p>
+    <p class="text-slate-300 mb-8">
+      Experience the same transformation that our clients have achieved with our
+      AI solutions.
+    </p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="/contact/" class="inline-flex items-center gap-2 bg-indigo-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-indigo-700 transition-colors">
+      <a
+        href="/contact/"
+        class="inline-flex items-center gap-2 bg-indigo-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-indigo-700 transition-colors"
+      >
         <i class="ri-rocket-line"></i>
         Start Your Journey
       </a>
-      <a href="/solutions/" class="inline-flex items-center gap-2 border border-white/30 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white/10 transition-colors">
+      <a
+        href="/solutions/"
+        class="inline-flex items-center gap-2 border border-white/30 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white/10 transition-colors"
+      >
         <i class="ri-eye-line"></i>
         Explore Solutions
       </a>
     </div>
   </div>
 </section>
-{% endblock %} 
+{% endblock %}

@@ -45,11 +45,10 @@ class ArticleAdmin(admin.ModelAdmin):
 
 @admin.register(GalleryImage)
 class GalleryImageAdmin(admin.ModelAdmin):
-    list_display = ("title", "category", "is_featured", "is_active", "created_at")
-    list_filter = ("category", "is_featured", "is_active", "created_at")
-    search_fields = ("title", "description", "alt_text")
-    list_editable = ("is_featured", "is_active")
-    readonly_fields = ("created_at", "updated_at")
+    list_display = ("title", "category", "created_at")
+    list_filter = ("category", "created_at")
+    search_fields = ("title", "alt_text")
+    readonly_fields = ("created_at","updated_at")   
 
 
 @admin.register(Testimonial)
