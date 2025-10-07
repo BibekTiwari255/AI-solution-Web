@@ -69,6 +69,7 @@
       "created_at": "2025-10-05T12:30:00Z"
     }
   },
+
   {
     "model": "main.solution",
     "pk": 1,
@@ -77,15 +78,8 @@
       "description": "Multilingual assistant that automates FAQs, ticket triage, and handoffs.",
       "category": "ai_assistant",
       "image": "solutions/ai_assistant.jpg",
-      "features": [
-        "Multilingual",
-        "Ticket triage",
-        "Live handoff"
-      ],
-      "metrics": {
-        "resolution": "80%",
-        "availability": "24/7"
-      },
+      "features": ["Multilingual", "Ticket triage", "Live handoff"],
+      "metrics": {"resolution": "80%", "availability": "24/7"},
       "pricing": "149.00",
       "is_featured": true,
       "is_active": true,
@@ -101,15 +95,8 @@
       "description": "Spin up product POCs in days using reusable components.",
       "category": "rapid_prototyping",
       "image": "solutions/prototyping.jpg",
-      "features": [
-        "UI kits",
-        "API scaffolds",
-        "Auto-deploy"
-      ],
-      "metrics": {
-        "time_to_demo": "72h",
-        "reuse_rate": "60%"
-      },
+      "features": ["UI kits", "API scaffolds", "Auto-deploy"],
+      "metrics": {"time_to_demo": "72h", "reuse_rate": "60%"},
       "pricing": "199.00",
       "is_featured": false,
       "is_active": true,
@@ -125,15 +112,8 @@
       "description": "Self-serve analytics with role-based dashboards and alerts.",
       "category": "analytics",
       "image": "solutions/analytics.jpg",
-      "features": [
-        "Forecasting",
-        "Cohort analysis",
-        "Anomaly detection"
-      ],
-      "metrics": {
-        "forecast_mape": "8%",
-        "alert_latency": "5m"
-      },
+      "features": ["Forecasting", "Cohort analysis", "Anomaly detection"],
+      "metrics": {"forecast_mape": "8%", "alert_latency": "5m"},
       "pricing": "179.00",
       "is_featured": false,
       "is_active": true,
@@ -149,15 +129,8 @@
       "description": "Policy enforcement, PII redaction, audit trails and controls.",
       "category": "security",
       "image": "solutions/security.jpg",
-      "features": [
-        "PII redaction",
-        "Audit logs",
-        "Role-based access"
-      ],
-      "metrics": {
-        "coverage": "95%",
-        "rto": "15m"
-      },
+      "features": ["PII redaction", "Audit logs", "Role-based access"],
+      "metrics": {"coverage": "95%", "rto": "15m"},
       "pricing": "129.00",
       "is_featured": true,
       "is_active": true,
@@ -173,15 +146,8 @@
       "description": "No-code rules and agentic tasks to eliminate repetitive ops.",
       "category": "automation",
       "image": "solutions/automation.jpg",
-      "features": [
-        "Event triggers",
-        "Human-in-the-loop",
-        "SLA tracking"
-      ],
-      "metrics": {
-        "tasks_auto": "70%",
-        "uptime": "99.9%"
-      },
+      "features": ["Event triggers", "Human-in-the-loop", "SLA tracking"],
+      "metrics": {"tasks_auto": "70%", "uptime": "99.9%"},
       "pricing": "189.00",
       "is_featured": false,
       "is_active": true,
@@ -189,6 +155,7 @@
       "updated_at": "2025-10-04T10:00:00Z"
     }
   },
+
   {
     "model": "main.event",
     "pk": 1,
@@ -284,6 +251,7 @@
       "updated_at": "2025-10-05T12:00:00Z"
     }
   },
+
   {
     "model": "main.article",
     "pk": 1,
@@ -384,6 +352,109 @@
       "updated_at": "2025-10-07T07:30:00Z"
     }
   },
+
+
+  {
+    "model": "main.article",
+    "pk": 6,
+    "fields": {
+      "title": "DocuMind: AI Enterprise Documentation Assistant",
+      "slug": "documind-enterprise-doc-assistant",
+      "description": "Create, manage, and search knowledge with AI summaries, NLQ, translation, and compliance scanning.",
+      "content": "Key Features:\n- Auto-summarize and categorize large documents into knowledge snippets\n- Natural language query search across internal docs\n- Real-time translation to multiple languages\n- Compliance scanner for policy/legal/security risks\n- Integrations: Slack, Teams, intranet",
+      "category": "integration",
+      "image": "articles/portfolio_documind.jpg",
+      "read_time": 6,
+      "author": "Client Portfolio",
+      "views": 12,
+      "is_featured": true,
+      "is_published": true,
+      "published_at": "2025-10-07T10:10:00Z",
+      "created_at": "2025-10-07T10:10:00Z",
+      "updated_at": "2025-10-07T10:10:00Z"
+    }
+  },
+  {
+    "model": "main.article",
+    "pk": 7,
+    "fields": {
+      "title": "Log AI: Smart Inventory & Supply Chain",
+      "slug": "log-ai-inventory-optimization",
+      "description": "AI inventory optimization with demand forecasting, real-time tracking, and ERP/POS integrations.",
+      "content": "Key Features:\n- Auto-adjust stock via demand forecasts & sales trends\n- Track across warehouses/stores/delivery networks\n- Predictive demand & seasonal trends\n- Integrates with ERP, POS, and supply chain systems",
+      "category": "analytics",
+      "image": "articles/portfolio_logai.jpg",
+      "read_time": 5,
+      "author": "Client Portfolio",
+      "views": 9,
+      "is_featured": false,
+      "is_published": true,
+      "published_at": "2025-10-07T10:12:00Z",
+      "created_at": "2025-10-07T10:12:00Z",
+      "updated_at": "2025-10-07T10:12:00Z"
+    }
+  },
+  {
+    "model": "main.article",
+    "pk": 8,
+    "fields": {
+      "title": "FinSight: Financial Insights & Budget Forecasting",
+      "slug": "finsight-financial-insights",
+      "description": "Track expenses, forecast budgets, detect anomalies, and receive personalized recommendations.",
+      "content": "Key Features:\n- AI anomaly detection for unusual spend & fraud\n- Predictive models for cash flow & revenue\n- Auto-categorize expenses from receipts & invoices\n- Budget recommendations per department\n- Smart alerts for overspend/risks/duplicates",
+      "category": "analytics",
+      "image": "articles/portfolio_finsight.jpg",
+      "read_time": 6,
+      "author": "Client Portfolio",
+      "views": 8,
+      "is_featured": true,
+      "is_published": true,
+      "published_at": "2025-10-07T10:14:00Z",
+      "created_at": "2025-10-07T10:14:00Z",
+      "updated_at": "2025-10-07T10:14:00Z"
+    }
+  },
+  {
+    "model": "main.article",
+    "pk": 9,
+    "fields": {
+      "title": "LaundriQ x Samsung: Intelligent Laundry Care",
+      "slug": "laundriq-intelligent-laundry",
+      "description": "AI fabric assessment, optimal detergent, eco cycles, and SmartThings integration for remote control.",
+      "content": "Key Features:\n- Real-time fabric type/condition/quality assessment\n- Gentle yet effective program selection per garment\n- Precise detergent calculation by load size & soil level\n- Reduced water/energy via smart load assessment\n- Samsung SmartThings connectivity",
+      "category": "integration",
+      "image": "articles/portfolio_laundriq.jpg",
+      "read_time": 5,
+      "author": "Client Portfolio",
+      "views": 11,
+      "is_featured": false,
+      "is_published": true,
+      "published_at": "2025-10-07T10:16:00Z",
+      "created_at": "2025-10-07T10:16:00Z",
+      "updated_at": "2025-10-07T10:16:00Z"
+    }
+  },
+  {
+    "model": "main.article",
+    "pk": 10,
+    "fields": {
+      "title": "SafeOps: AI Workplace Safety & Compliance",
+      "slug": "safeops-safety-compliance",
+      "description": "Real-time hazard detection, predictive risk analytics, audit-ready reports, and IoT alerts.",
+      "content": "Key Features:\n- AI camera monitoring for unsafe behaviors & hazards\n- Predictive analytics from incident history\n- Automated compliance reporting for audits\n- Personalized safety training suggestions\n- IoT integration: fire/gas/equipment alerts",
+      "category": "security",
+      "image": "articles/portfolio_safeops.jpg",
+      "read_time": 6,
+      "author": "Client Portfolio",
+      "views": 7,
+      "is_featured": true,
+      "is_published": true,
+      "published_at": "2025-10-07T10:18:00Z",
+      "created_at": "2025-10-07T10:18:00Z",
+      "updated_at": "2025-10-07T10:18:00Z"
+    }
+  },
+
   {
     "model": "main.galleryimage",
     "pk": 1,
@@ -444,6 +515,69 @@
       "updated_at": "2025-10-05T06:10:00Z"
     }
   },
+
+ 
+  {
+    "model": "main.galleryimage",
+    "pk": 6,
+    "fields": {
+      "title": "DocuMind Knowledge View",
+      "category": "products",
+      "image": "gallery/portfolio_documind.jpg",
+      "alt_text": "DocuMind UI summarizing documents",
+      "created_at": "2025-10-07T10:11:00Z",
+      "updated_at": "2025-10-07T10:11:00Z"
+    }
+  },
+  {
+    "model": "main.galleryimage",
+    "pk": 7,
+    "fields": {
+      "title": "Log AI Dashboard",
+      "category": "products",
+      "image": "gallery/portfolio_logai.jpg",
+      "alt_text": "Inventory optimization dashboard",
+      "created_at": "2025-10-07T10:13:00Z",
+      "updated_at": "2025-10-07T10:13:00Z"
+    }
+  },
+  {
+    "model": "main.galleryimage",
+    "pk": 8,
+    "fields": {
+      "title": "FinSight Forecasts",
+      "category": "products",
+      "image": "gallery/portfolio_finsight.jpg",
+      "alt_text": "Financial insights and budgeting UI",
+      "created_at": "2025-10-07T10:15:00Z",
+      "updated_at": "2025-10-07T10:15:00Z"
+    }
+  },
+  {
+    "model": "main.galleryimage",
+    "pk": 9,
+    "fields": {
+      "title": "LaundriQ Smart Cycle",
+      "category": "products",
+      "image": "gallery/portfolio_laundriq.jpg",
+      "alt_text": "LaundriQ with Samsung SmartThings",
+      "created_at": "2025-10-07T10:17:00Z",
+      "updated_at": "2025-10-07T10:17:00Z"
+    }
+  },
+  {
+    "model": "main.galleryimage",
+    "pk": 10,
+    "fields": {
+      "title": "SafeOps Monitoring",
+      "category": "products",
+      "image": "gallery/portfolio_safeops.jpg",
+      "alt_text": "Safety dashboard and camera alerts",
+      "created_at": "2025-10-07T10:19:00Z",
+      "updated_at": "2025-10-07T10:19:00Z"
+    }
+  },
+
   {
     "model": "main.testimonial",
     "pk": 1,
@@ -529,6 +663,94 @@
       "updated_at": "2025-10-05T13:00:00Z"
     }
   },
+
+
+  {
+    "model": "main.testimonial",
+    "pk": 6,
+    "fields": {
+      "name": "Samantha Lee",
+      "position": "Operations Manager",
+      "company": "Orion Tech",
+      "industry": "technology",
+      "content": "DocuMind has completely changed how our teams handle documentation... It feels like having a super-smart assistant that never forgets.",
+      "rating": 5,
+      "avatar_initials": "SL",
+      "is_featured": true,
+      "is_active": true,
+      "created_at": "2025-10-07T10:20:00Z",
+      "updated_at": "2025-10-07T10:20:00Z"
+    }
+  },
+  {
+    "model": "main.testimonial",
+    "pk": 7,
+    "fields": {
+      "name": "Rajesh Patel",
+      "position": "CFO",
+      "company": "GreenWave Retail & Co.",
+      "industry": "financial",
+      "content": "FinSight has given us unprecedented visibility into our company’s finances... It’s like having a CFO powered by AI working 24/7.",
+      "rating": 5,
+      "avatar_initials": "RP",
+      "is_featured": true,
+      "is_active": true,
+      "created_at": "2025-10-07T10:21:00Z",
+      "updated_at": "2025-10-07T10:21:00Z"
+    }
+  },
+  {
+    "model": "main.testimonial",
+    "pk": 8,
+    "fields": {
+      "name": "Michael Reed",
+      "position": "Supply Chain Manager",
+      "company": "Vaux Brewery",
+      "industry": "manufacturing",
+      "content": "Log AI has revolutionized our inventory management system... a must-have for any business looking to streamline inventory operations.",
+      "rating": 4,
+      "avatar_initials": "MR",
+      "is_featured": false,
+      "is_active": true,
+      "created_at": "2025-10-07T10:22:00Z",
+      "updated_at": "2025-10-07T10:22:00Z"
+    }
+  },
+  {
+    "model": "main.testimonial",
+    "pk": 9,
+    "fields": {
+      "name": "James Lee",
+      "position": "Regional Manager",
+      "company": "Samsung Electronics",
+      "industry": "technology",
+      "content": "LaundriQ is a groundbreaking innovation that perfectly complements Samsung’s commitment to smart home solutions... It’s truly a game-changer.",
+      "rating": 5,
+      "avatar_initials": "JL",
+      "is_featured": true,
+      "is_active": true,
+      "created_at": "2025-10-07T10:23:00Z",
+      "updated_at": "2025-10-07T10:23:00Z"
+    }
+  },
+  {
+    "model": "main.testimonial",
+    "pk": 10,
+    "fields": {
+      "name": "Michael Grant",
+      "position": "Plant Manager",
+      "company": "Titan Manufacturing",
+      "industry": "manufacturing",
+      "content": "SafeOps has been a game-changer for our manufacturing unit. The AI detects hazards in real-time and even predicts equipment failures... Our workplace has never been safer.",
+      "rating": 5,
+      "avatar_initials": "MG",
+      "is_featured": true,
+      "is_active": true,
+      "created_at": "2025-10-07T10:24:00Z",
+      "updated_at": "2025-10-07T10:24:00Z"
+    }
+  },
+
   {
     "model": "main.pricingplan",
     "pk": 1,
@@ -537,11 +759,7 @@
       "price": "free",
       "period": "per month",
       "description": "For free use.",
-      "features": [
-        "One use 3 projects",
-        "No support",
-        "No advanced dashboards"
-      ],
+      "features": ["One use 3 projects", "No support", "No advanced dashboards"],
       "is_popular": false,
       "is_active": true,
       "created_at": "2025-10-06T10:10:00Z",
@@ -556,11 +774,7 @@
       "price": "£29",
       "period": "per month",
       "description": "Best for prototypes and small teams.",
-      "features": [
-        "Up to 3 projects",
-        "Basic analytics",
-        "Community support"
-      ],
+      "features": ["Up to 3 projects", "Basic analytics", "Community support"],
       "is_popular": false,
       "is_active": true,
       "created_at": "2025-10-06T10:00:00Z",
@@ -575,11 +789,7 @@
       "price": "£99",
       "period": "per month",
       "description": "For growing teams that need scale and support.",
-      "features": [
-        "Unlimited projects",
-        "Priority email support",
-        "Advanced dashboards"
-      ],
+      "features": ["Unlimited projects", "Priority email support", "Advanced dashboards"],
       "is_popular": true,
       "is_active": true,
       "created_at": "2025-10-06T10:10:00Z",
