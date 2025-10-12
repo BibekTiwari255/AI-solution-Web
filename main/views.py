@@ -2,14 +2,26 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.contrib import messages
-from django.utils import timezone
-from django.db.models import Avg, Count
+from django.db import models, connection
+from django.core.exceptions import ImproperlyConfigured
+import logging
 
 from .forms import ContactForm
 from .models import (
-    Inquiry, Solution, Event, Article, GalleryImage,
+    Inquiry, Solution, Event, Article, GalleryImage, 
     Testimonial, PricingPlan
 )
+
+logger = logging.getLogger(__name__)
+
+
+def safe_query(model_class, **filters):
+    """Safely query database models with error handling"""
+    try:
+        return model_class.objects.filter(**filters)
+    except Exception as e:
+        logger.error(f"Database error in {model_class.__name__}: {str(e)}")
+        return model_class.objects.none()
 
 
 def home(request):
@@ -17,13 +29,24 @@ def home(request):
 
 
 def solutions(request):
-    solutions_qs = Solution.objects.filter(is_active=True)
-    context = {
-        "solutions": solutions_qs,
-        "featured_solutions": solutions_qs.filter(is_featured=True),
-        "pricing_plans": PricingPlan.objects.all()
-    }
-    return render(request, "main/solutions.html", context)
+    try:
+        solutions = safe_query(Solution, is_active=True)
+        featured_solutions = solutions.filter(is_featured=True)
+        pricing_plans = safe_query(PricingPlan, is_active=True)
+        
+        context = {
+            'solutions': solutions,
+            'featured_solutions': featured_solutions,
+            'pricing_plans': pricing_plans,
+        }
+        return render(request, "main/solutions.html", context)
+    except Exception as e:
+        logger.error(f"Error in solutions view: {str(e)}")
+        return render(request, "main/solutions.html", {
+            'solutions': Solution.objects.none(),
+            'featured_solutions': Solution.objects.none(),
+            'pricing_plans': PricingPlan.objects.none(),
+        })
 
 
 def portfolio(request):
@@ -31,72 +54,112 @@ def portfolio(request):
 
 
 def testimonials(request):
-    testimonials_qs = Testimonial.objects.filter(is_active=True)
-
-    # Industry stats in one query
-    industry_agg = (
-        testimonials_qs.values("industry")
-        .annotate(count=Count("id"), avg_rating=Avg("rating"))
-    )
-
-    # Convert to simple dict with rounded avg
-    industry_stats = {
-        row["industry"]: {
-            "count": row["count"],
-            "avg_rating": round(row["avg_rating"] or 0, 1),
+    try:
+        testimonials = safe_query(Testimonial, is_active=True)
+        featured_testimonials = testimonials.filter(is_featured=True)
+        
+        # Get industry statistics
+        industry_stats = {}
+        for industry, _ in Testimonial.INDUSTRY_CHOICES:
+            count = testimonials.filter(industry=industry).count()
+            if count > 0:
+                avg_rating = testimonials.filter(industry=industry).aggregate(
+                    avg_rating=models.Avg('rating')
+                )['avg_rating']
+                industry_stats[industry] = {
+                    'count': count,
+                    'avg_rating': round(avg_rating, 1)
+                }
+        
+        context = {
+            'testimonials': testimonials,
+            'featured_testimonials': featured_testimonials,
+            'industry_stats': industry_stats,
         }
-        for row in industry_agg
-        if row["count"] > 0
-    }
-
-    context = {
-        "testimonials": testimonials_qs,
-        "featured_testimonials": testimonials_qs.filter(is_featured=True),
-        "industry_stats": industry_stats,
-    }
-    return render(request, "main/testimonials.html", context)
+        return render(request, "main/testimonials.html", context)
+    except Exception as e:
+        logger.error(f"Error in testimonials view: {str(e)}")
+        return render(request, "main/testimonials.html", {
+            'testimonials': Testimonial.objects.none(),
+            'featured_testimonials': Testimonial.objects.none(),
+            'industry_stats': {},
+        })
 
 
 def articles(request):
-    articles_qs = Article.objects.filter(is_published=True)
-
-    # Category stats in one query
-    category_stats = {
-        row["category"]: row["count"]
-        for row in articles_qs.values("category").annotate(count=Count("id"))
-        if row["count"] > 0
-    }
-
-    context = {
-        "articles": articles_qs,
-        "featured_articles": articles_qs.filter(is_featured=True),
-        "category_stats": category_stats,
-    }
-    return render(request, "main/articles.html", context)
+    try:
+        articles = safe_query(Article, is_published=True)
+        featured_articles = articles.filter(is_featured=True)
+        
+        # Get category statistics
+        category_stats = {}
+        for category, _ in Article.CATEGORY_CHOICES:
+            count = articles.filter(category=category).count()
+            if count > 0:
+                category_stats[category] = count
+        
+        context = {
+            'articles': articles,
+            'featured_articles': featured_articles,
+            'category_stats': category_stats,
+        }
+        return render(request, "main/articles.html", context)
+    except Exception as e:
+        logger.error(f"Error in articles view: {str(e)}")
+        return render(request, "main/articles.html", {
+            'articles': Article.objects.none(),
+            'featured_articles': Article.objects.none(),
+            'category_stats': {},
+        })
 
 
 def gallery(request):
-    images = GalleryImage.objects.all()
-    return render(request, "main/gallery.html", {"images": images})
+    try:
+        images = safe_query(GalleryImage, is_active=True)
+        featured_images = images.filter(is_featured=True)
+        
+        context = {
+            "images": images,
+            "title": "Photo Gallery",  # 👈 Pass title here
+            "subtitle": "Promotional events and moments.",
+            "icon_class": "ri-gallery-line",
+        }
+        return render(request, "main/gallery.html", context)
+    except Exception as e:
+        logger.error(f"Error in gallery view: {str(e)}")
+        return render(request, "main/gallery.html", {
+            "images": GalleryImage.objects.none(),
+            "title": "Photo Gallery",
+            "subtitle": "Promotional events and moments.",
+            "icon_class": "ri-gallery-line",
+        })
 
 
 def events(request):
-    events_qs = Event.objects.filter(is_active=True)
-    upcoming = events_qs.filter(date__gte=timezone.now())
-
-    # Event type stats in one query (on active events; switch to 'upcoming' if desired)
-    event_type_stats = {
-        row["event_type"]: row["count"]
-        for row in events_qs.values("event_type").annotate(count=Count("id"))
-        if row["count"] > 0
-    }
-
-    context = {
-        "events": events_qs,
-        "featured_events": upcoming.filter(is_featured=True),
-        "event_type_stats": event_type_stats,
-    }
-    return render(request, "main/events.html", context)
+    try:
+        events = safe_query(Event, is_active=True)
+        featured_events = events.filter(is_featured=True)
+        
+        # Get event type statistics
+        event_type_stats = {}
+        for event_type, _ in Event.EVENT_TYPE_CHOICES:
+            count = events.filter(event_type=event_type).count()
+            if count > 0:
+                event_type_stats[event_type] = count
+        
+        context = {
+            'events': events,
+            'featured_events': featured_events,
+            'event_type_stats': event_type_stats,
+        }
+        return render(request, "main/events.html", context)
+    except Exception as e:
+        logger.error(f"Error in events view: {str(e)}")
+        return render(request, "main/events.html", {
+            'events': Event.objects.none(),
+            'featured_events': Event.objects.none(),
+            'event_type_stats': {},
+        })
 
 
 def contact(request):
@@ -106,8 +169,6 @@ def contact(request):
             form.save()
             messages.success(request, "Thank you! We'll get back to you shortly.")
             return redirect(reverse("contact"))
-        else:
-            messages.error(request, "Please fix the errors below.")
     else:
         form = ContactForm()
     return render(request, "main/contact.html", {"form": form})
@@ -115,10 +176,18 @@ def contact(request):
 
 @login_required
 def admin_dashboard(request):
-    total_inquiries = Inquiry.objects.count()
-    recent_inquiries = Inquiry.objects.all()[:10]  # Ordered by Meta on Inquiry
-    return render(
-        request,
-        "main/admin_dashboard.html",
-        {"total_inquiries": total_inquiries, "recent_inquiries": recent_inquiries},
-    )
+    try:
+        total_inquiries = Inquiry.objects.count()
+        recent_inquiries = Inquiry.objects.all()[:10]
+        return render(
+            request,
+            "main/admin_dashboard.html",
+            {"total_inquiries": total_inquiries, "recent_inquiries": recent_inquiries},
+        )
+    except Exception as e:
+        logger.error(f"Error in admin_dashboard view: {str(e)}")
+        return render(
+            request,
+            "main/admin_dashboard.html",
+            {"total_inquiries": 0, "recent_inquiries": Inquiry.objects.none()},
+        )
