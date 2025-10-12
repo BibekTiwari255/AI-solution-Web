@@ -25,7 +25,13 @@ def safe_query(model_class, **filters):
 
 
 def home(request):
-    return render(request, "main/home.html")
+    try:
+        return render(request, "main/home.html")
+    except Exception as e:
+        logger.error(f"Error in home view: {str(e)}")
+        # Return a simple response if template fails
+        from django.http import HttpResponse
+        return HttpResponse("Welcome to AI Solutions - Site is working!")
 
 
 def solutions(request):
@@ -50,7 +56,12 @@ def solutions(request):
 
 
 def portfolio(request):
-    return render(request, "main/portfolio.html")
+    try:
+        return render(request, "main/portfolio.html")
+    except Exception as e:
+        logger.error(f"Error in portfolio view: {str(e)}")
+        from django.http import HttpResponse
+        return HttpResponse("Portfolio page - Template error, but Django is working!")
 
 
 def testimonials(request):

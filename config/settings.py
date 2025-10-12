@@ -87,10 +87,14 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 # Add these at the top of your settings.py
 import os
-from dotenv import load_dotenv
 from urllib.parse import urlparse, parse_qsl
 
-load_dotenv()
+# Try to load environment variables
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
 
 # Database configuration
 DATABASE_URL = os.getenv("DATABASE_URL")
